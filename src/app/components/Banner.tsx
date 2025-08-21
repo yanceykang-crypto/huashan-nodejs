@@ -1,0 +1,53 @@
+import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Pagination, Autoplay } from "swiper/modules";
+import { Image } from "@heroui/react";
+import { bannerConfig } from "@/app/config/banner";
+import { useCallback, useRef } from "react";
+const Banner = () => {
+  const progressCircle = useRef<SVGSVGElement>(null);
+  const progressContent = useRef<HTMLSpanElement>(null);
+  const onAutoplayTimeLeft = useCallback(
+    (swiper: SwiperClass, time: number, progress: number) => {
+      if (progressContent?.current) {
+        progressCircle?.current?.style.setProperty("--progress", `${progress}`);
+        progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+      }
+    },
+    [progressContent]
+  );
+  return (
+    <Swiper
+      className=" w-full swiper-super-flow h-30 sm:h-[320px] md:h-[400px] lg:h-[600px] "
+      spaceBetween={30}
+      centeredSlides={true}
+      autoplay={{
+        delay: 5000,
+        disableOnInteraction: false,
+      }}
+      pagination={{
+        clickable: true,
+      }}
+      modules={[Autoplay, Pagination]}
+      onAutoplayTimeLeft={onAutoplayTimeLeft}
+    >
+      {bannerConfig.map((item, index) => (
+        <SwiperSlide key={index}>
+          <Image
+            src={item.src}
+            className="rounded-none !w-dvw"
+            alt={item.alt}
+          />
+        </SwiperSlide>
+      ))}
+      <div className="autoplay-progress" slot="container-end">
+        <svg viewBox="0 0 48 48" ref={progressCircle}>
+          <circle cx="24" cy="24" r="20"></circle>
+        </svg>
+        <span ref={progressContent}></span>
+      </div>
+    </Swiper>
+  );
+};
+export default Banner;

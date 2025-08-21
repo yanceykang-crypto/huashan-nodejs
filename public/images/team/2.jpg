@@ -1,0 +1,7 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" fill="#f0f0f0" rx="10" ry="10"/>
+  <circle cx="100" cy="60" r="40" fill="#d1d5db"/>
+  <path d="M100 100 Q150 140, 100 180 Q50 140, 100 100" fill="#d1d5db"/>
+  <text x="100" y="130" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">李四</text>
+  <text x="100" y="150" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">总经理</text>
+</svg>
