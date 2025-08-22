@@ -37,11 +37,13 @@ export default function RootLayout({
       lang="en"
       className={`${notoSansSC.variable} ${geistSans.variable} ${lexend.variable} antialiased`}
     >
-      <body className={`${lexend.className} `}>
+      <head>
         <meta charSet="utf-8" />
-        <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm">
-          <Header></Header>
-        </header>
+      </head>
+      <body className={`${lexend.className} `}>
+        {/* <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm"> */}
+        <Header></Header>
+        {/* </header> */}
         {children}
         <Footer />
         <FloatButton />

@@ -83,7 +83,7 @@ export default function AboutPage() {
               <p className="text-gray-600 mb-4 text-xl leading-relaxed">
                 成立于
                 <span
-                  className={`text-5xl font-bold font-[lexend] text-default`}
+                  className={`text-5xl font-bold font-[lexend] text-primary`}
                 >
                   2007
                 </span>

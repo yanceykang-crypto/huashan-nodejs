@@ -46,7 +46,7 @@ const NewsPage: FC = () => {
                     {news.summary}
                   </p>
                   <div className="flex justify-end">
-                    <span className="text-default font-medium flex items-center">
+                    <span className="text-primary font-medium flex items-center">
                       阅读更多
                       <ChevronsRight />
                     </span>

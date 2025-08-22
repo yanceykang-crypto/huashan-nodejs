@@ -33,10 +33,11 @@ const Banner = () => {
       onAutoplayTimeLeft={onAutoplayTimeLeft}
     >
       {bannerConfig.map((item, index) => (
-        <SwiperSlide key={index}>
+        <SwiperSlide key={index} className="h-full">
           <Image
             src={item.src}
-            className="rounded-none !w-dvw"
+            className="rounded-none h-full !w-dvw"
+            classNames={{ wrapper: "h-full" }}
             alt={item.alt}
           />
         </SwiperSlide>

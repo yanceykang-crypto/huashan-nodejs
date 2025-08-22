@@ -136,13 +136,17 @@ const HonorsPage: React.FC = () => {
           }`}
         >
           {/* 背景 */}
-          <div className="absolute inset-0 bg-black bg-opacity-90"></div>
+          <div
+            className="absolute inset-0 bg-black bg-opacity-90"
+            onClick={closePreview}
+          ></div>
 
           {/* 关闭按钮 */}
           <Button
             className="absolute top-6 right-6 text-white z-11"
             onPress={closePreview}
             isIconOnly
+            color="primary"
           >
             <X size={24} />
           </Button>
@@ -150,6 +154,7 @@ const HonorsPage: React.FC = () => {
           {/* 上一张按钮 */}
           <Button
             isIconOnly
+            color="primary"
             className="absolute left-6 top-1/2 -translate-y-1/2  text-white  z-11"
             onPress={() => {
               prevImage();
@@ -178,6 +183,7 @@ const HonorsPage: React.FC = () => {
           <Button
             className="absolute right-6 top-1/2 -translate-y-1/2 text-white z-11"
             isIconOnly
+            color="primary"
             variant="solid"
             onPress={() => {
               nextImage();

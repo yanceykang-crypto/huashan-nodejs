@@ -15,7 +15,7 @@ export const FloatButton = () => {
     <div className={`fixed bottom-10 right-10 z-[999] `}>
       <Popover placement="left-end">
         <PopoverTrigger>
-          <Button isIconOnly className="w-16 h-16">
+          <Button isIconOnly color="primary" className="w-16 h-16">
             <CustomServiceIcon className="w-10 h-10" fill="white" />
           </Button>
         </PopoverTrigger>

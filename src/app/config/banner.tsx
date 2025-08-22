@@ -1,10 +1,14 @@
 export const bannerConfig = [
   {
-    src: "/images/banner1.jpg",
+    src: "/images/banner2.jpg",
     alt: "banner1",
   },
   {
-    src: "/images/banner1.jpg",
+    src: "/images/banner3.jpg",
+    alt: "banner1",
+  },
+  {
+    src: "/images/banner4.jpg",
     alt: "banner1",
   },
 ];

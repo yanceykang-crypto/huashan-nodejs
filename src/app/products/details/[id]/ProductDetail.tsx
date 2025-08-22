@@ -2,7 +2,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ProductItem } from "@/app/config/products";
+import { ProductCategory, ProductItem } from "@/app/config/products";
+import { Button } from "@heroui/react";
 
 interface ProductDetailProps {
   product: ProductItem;
@@ -65,7 +66,11 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
 
           <div>
             <div className="text-sm text-blue-600 font-medium mb-2">
-              {product.category}
+              {
+                ProductCategory[
+                  product.category as keyof typeof ProductCategory
+                ]
+              }
             </div>
             <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
               {product.title}
@@ -102,12 +107,13 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <button className="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors flex-1 md:flex-none md:w-auto">
+              <a
+                href="/contact"
+                color="primary"
+                className="text-white bg-primary h-10 leading-10 px-4  rounded-md shadow-sm hover:bg-primary/90 transition-colors"
+              >
                 立即购买
-              </button>
-              <button className="px-6 py-3 bg-gray-100 text-gray-800 rounded-md hover:bg-gray-200 transition-colors flex-1 md:flex-none md:w-auto">
-                加入询价
-              </button>
+              </a>
             </div>
           </div>
         </div>

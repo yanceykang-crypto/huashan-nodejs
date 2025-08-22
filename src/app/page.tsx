@@ -25,7 +25,7 @@ export default function Home() {
                 return (
                   <div
                     className={`flex flex-col justify-center w-18 md:w-20 items-center cursor-pointer ${
-                      active === key ? "text-default" : "text-gray-600"
+                      active === key ? "text-primary" : "text-gray-600"
                     }`}
                     key={key}
                     onClick={() => setActive(key)}
@@ -53,7 +53,7 @@ export default function Home() {
             })}
           </div>
           <div className="mt-10 md:mt-20 relative">
-            <div className="bg-default w-full md:w-150 md:h-160 px-10 py-8 md:py-15">
+            <div className="bg-primary w-full md:w-150 md:h-160 px-10 py-8 md:py-15">
               <h1 className="text-white text-3xl md:text-5xl font-extrabold">
                 Brand Video
               </h1>
@@ -69,7 +69,14 @@ export default function Home() {
               </p>
             </div>
             <div className="bg-amber-500  md:w-[70%] md:h-110 md:absolute md:right-0 md:top-25">
-              <video autoPlay controls loop src="/images/hs.mp4"></video>
+              <video
+                autoPlay
+                controls
+                loop
+                src="/images/hs.mp4"
+                height={"100%"}
+                width={"100%"}
+              ></video>
             </div>
           </div>
         </div>
@@ -106,7 +113,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="w-full bg-default pb-20 px-2 md:px-0">
+        <div className="w-full bg-primary pb-20 px-2 md:px-0">
           <div className="max-w-7xl mt-10 md:mt-20 mx-auto">
             <div className="text-center p-6 text-white">
               <h1 className="text-3xl md:text-5xl font-extrabold md:mt-10 md:mb-5">
@@ -131,7 +138,7 @@ export default function Home() {
         </div>
         <div className="w-full bg-blue-50 pb-20 px-2 md:px-0">
           <div className="max-w-7xl mt-10 md:mt-20 mx-auto">
-            <div className="text-center p-6 text-default">
+            <div className="text-center p-6 text-primary">
               <h1 className="text-3xl md:text-5xl font-extrabold md:mt-10 md:mb-5">
                 关于化善
               </h1>
@@ -155,7 +162,7 @@ export default function Home() {
                 {aboutConfig.map((item, index) => {
                   return (
                     <div className="flex items-center" key={index}>
-                      <div className="fill-default w-18">{item.icon}</div>
+                      <div className="fill-primary w-18">{item.icon}</div>
                       <div className="ml-2 flex flex-col justify-center">
                         <h1 className="text-lg md:text-xl font-bold">
                           {item.title}

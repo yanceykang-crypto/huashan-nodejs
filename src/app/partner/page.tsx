@@ -8,10 +8,10 @@ const Page: FC = () => {
       <main className="w-full bg-[url('/images/partnerbg.png')] bg-cover px-3 md:px-0">
         <div className="max-w-7xl m-auto py-20 group">
           <div className="relative h-full flex flex-col items-center justify-center text-center px-4 md:px-8 z-10">
-            <h1 className="text-4xl md:text-6xl font-bold  text-default mb-4 tracking-tight transform transition-transform duration-500 group-hover:scale-105">
+            <h1 className="text-4xl md:text-6xl font-bold  text-primary mb-4 tracking-tight transform transition-transform duration-500 group-hover:scale-105">
               代理品牌
             </h1>
-            <p className="text-xl md:text-2xl  text-default max-w-2xl mx-auto opacity-90 font-light leading-relaxed">
+            <p className="text-xl md:text-2xl  text-primary max-w-2xl mx-auto opacity-90 font-light leading-relaxed">
               AGENT BRAND
             </p>
           </div>
