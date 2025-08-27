@@ -29,6 +29,7 @@ export const mobileNavConfig: NavConfig[] = [
 export const navConfig: NavConfig[] = [
   {
     label: "关于化善",
+    href: "/about",
     children: [
       {
         label: "合作伙伴",
@@ -42,6 +43,7 @@ export const navConfig: NavConfig[] = [
   },
   {
     label: "产品中心",
+    href: "/products",
     children: [
       {
         label: "全部产品",
@@ -160,6 +162,16 @@ export const navConfig: NavConfig[] = [
   {
     label: "资质证书",
     href: "/honors",
+    children: [
+      {
+        label: "资质证书",
+        href: "/honors",
+      },
+      {
+        label: "授权证书",
+        href: "/honors",
+      },
+    ],
   },
   {
     label: "联系我们",

@@ -9,12 +9,72 @@ import {
 } from "../config/common";
 const Footer = () => {
   return (
-    <footer className="bg-[url(/images/footer_bg.png)] text-gray-400 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="">
-          <div>
-            <h3 className="text-white text-lg font-medium mb-4">联系我们</h3>
-            <ul className="grid grid-cols-1 md:grid-cols-3 gap-x-5">
+    <footer className="bg-[url(/images/footer_bg.png)] text-gray-400 py-5 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 pt-6 sm:px-6 lg:px-8">
+        <div className="md:flex block gap-8  pb-5">
+          <div className="md:flex block gap-20 flex-1 ">
+            <div>
+              <h3 className="text-white text-lg font-medium mb-4 mt-4">
+                网站首页
+              </h3>
+            </div>
+            <div>
+              <h3 className="text-white text-lg font-medium mb-4 mt-4">
+                关于化善
+              </h3>
+              <ul className="md:flex md:flex-col flex-row gap-4">
+                <li>
+                  <Link href="/" className="hover:text-white transition-colors">
+                    合作伙伴
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/about"
+                    className="hover:text-white transition-colors"
+                  >
+                    关于我们
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-white text-lg font-medium mb-4 mt-4">
+                产品中心
+              </h3>
+              <ul className="flex flex-col gap-4">
+                <li>
+                  <Link
+                    href="/products?category=pneumatic"
+                    className="hover:text-white transition-colors"
+                  >
+                    气动工具
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/products?category=electric"
+                    className="hover:text-white transition-colors"
+                  >
+                    电动工具
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/products?category=manual"
+                    className="hover:text-white transition-colors"
+                  >
+                    手动工具
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="">
+            <h3 className="text-white text-lg font-medium mb-4 mt-4">
+              联系我们
+            </h3>
+            <ul className="flex flex-col md:grid-cols-3 gap-x-5 gap-4">
               <li className="flex items-start">
                 <svg
                   className="h-5 w-5 mr-2 mt-0.5"
@@ -81,7 +141,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="border-t border-gray-800 mt-3 pt-3 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-gray-400 mt-3 pt-5 flex flex-col md:flex-row justify-between items-center">
           <p>© 2023 「{siteName}」. 保留所有权利.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href={"https://beian.miit.gov.cn/"} target="_blank">

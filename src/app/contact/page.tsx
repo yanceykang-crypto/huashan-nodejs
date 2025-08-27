@@ -1,9 +1,14 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { telNumber, email, address } from "@/app/config/common";
-import { MapPin, Phone, Mail, RefreshCw } from "lucide-react";
-import { Button, Input, Textarea } from "@heroui/react";
-
+import {
+  telNumber,
+  email,
+  address,
+  telNumber1,
+  telNumber2,
+} from "@/app/config/common";
+import { Button, Input, Textarea, Image, Divider } from "@heroui/react";
+import MapComponent from "@/app/components/Map";
 const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -115,72 +120,48 @@ const ContactPage = () => {
       setIsLoading(false);
     }
   };
-
   return (
-    <div className="font-sans min-h-screen flex flex-col bg-gray-50">
+    <div className="font-sans min-h-screen flex flex-col bg-gray-50 relative">
+      <div className="bg-black opacity-50 h-140 w-full fixed left-0 top-0 z-0"></div>
+      <Image
+        src="/images/partnerbg.png"
+        alt=""
+        className="h-140 w-100vw rounded-none fixed top-0 left-0 z-0"
+        classNames={{
+          wrapper: "h-140 !w-full rounded-none fixed top-0 left-0 !max-w-full",
+          img: "h-140 !w-full rounded-none object-cover",
+        }}
+      />
       {/* 页面标题区域 */}
-      <div className="bg-gradient-to-r relative overflow-hidden h-72 md:h-96 from-blue-600 to-purple-600 py-16 px-4 md:px-0 group">
-        <div className="absolute inset-0 bg-[url('/images/about_bg.png')] bg-cover bg-center opacity-20 group-hover:opacity-30 transition-opacity"></div>
-        <div className="relative h-full flex flex-col items-center justify-center text-center px-4 md:px-8 z-10">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight transform transition-transform duration-500 group-hover:scale-105">
-            联系我们
+      <div className="md:w-6xl w-full md:flex justify-between m-auto z-10 mt-40 shadow-2xl bg-white">
+        <div className="bg-primary md:flex-1 p-5 flex flex-col justify-center items-center">
+          <h1 className="md:text-3xl text-2xl font-bold text-white">
+            化善智能装备（东莞）有限公司
           </h1>
-          <p className="text-xl md:text-2xl text-blue-50 max-w-2xl mx-auto opacity-90 font-light leading-relaxed">
-            无论您有任何问题或需求，我们都将竭诚为您服务
+          <p className="text-white md:text-lg text-sm">
+            Huashan intelligent equipment (Dongguan) Co., Ltd
           </p>
+          <Divider className="md:w-4/5 w-full bg-white m-10"></Divider>
+          <div className="flex flex-col gap-4">
+            <p className="text-white">
+              电话：{telNumber}/{telNumber1}/{telNumber2}
+            </p>
+            <p className="text-white">邮箱：{email}</p>
+            <p className="text-white">地址：{address}</p>
+          </div>
+        </div>
+        <div className="h-120 w-full md:w-140">
+          <MapComponent />
         </div>
       </div>
-
       {/* 主要内容区域 */}
-      <main className="flex-grow w-full py-12 px-4 md:px-0">
+      <main className="flex-grow w-full py-12 px-4 md:px-0  z-10">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* 联系信息 */}
-            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
-              <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                联系方式
-              </h2>
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-blue-100 p-3 rounded-full text-blue-600">
-                    <MapPin size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg text-gray-700 mb-1">
-                      公司地址
-                    </h3>
-                    <p className="text-gray-600">{address}</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="bg-blue-100 p-3 rounded-full text-blue-600">
-                    <Phone size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg text-gray-700 mb-1">
-                      联系电话
-                    </h3>
-                    <p className="text-gray-600">{telNumber}</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="bg-blue-100 p-3 rounded-full text-blue-600">
-                    <Mail size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg text-gray-700 mb-1">
-                      电子邮箱
-                    </h3>
-                    <p className="text-gray-600">{email}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+          <div className="grid ">
             {/* 联系表单 */}
             <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
-              <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                发送消息
+              <h2 className="text-3xl font-bold text-primary mb-6 text-center">
+                客户留言
               </h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -232,7 +213,7 @@ const ContactPage = () => {
                   />
                   <div className="flex items-center">
                     <div className="relative h-12 flex-grow">
-                      <div 
+                      <div
                         className="h-full flex items-center justify-center bg-gray-100 cursor-pointer rounded-md px-3"
                         onClick={refreshCaptcha}
                         style={{ maxHeight: "38px" }}
@@ -242,13 +223,6 @@ const ContactPage = () => {
                         </span>
                       </div>
                     </div>
-                    <Button
-                      onClick={refreshCaptcha}
-                      className="ml-2 p-2"
-                      color="default"
-                    >
-                      <RefreshCw size={16} />
-                    </Button>
                   </div>
                 </div>
 

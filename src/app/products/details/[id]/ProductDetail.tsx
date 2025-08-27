@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ProductCategory, ProductItem } from "@/app/config/products";
-import { Button } from "@heroui/react";
+import { Chip } from "@heroui/react";
 
 interface ProductDetailProps {
   product: ProductItem;
@@ -16,7 +16,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
     <div className="container mx-auto px-4 py-8">
       <Link
         href="/products"
-        className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-6"
+        className="inline-flex items-center text-primary hover:text-primary-600 mb-6"
       >
         <svg
           className="w-4 h-4 mr-1"
@@ -65,12 +65,14 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
           </div>
 
           <div>
-            <div className="text-sm text-blue-600 font-medium mb-2">
-              {
-                ProductCategory[
-                  product.category as keyof typeof ProductCategory
-                ]
-              }
+            <div className="text-sm text-white font-medium mb-2">
+              <Chip color="primary">
+                {
+                  ProductCategory[
+                    product.category as keyof typeof ProductCategory
+                  ]
+                }
+              </Chip>
             </div>
             <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
               {product.title}
@@ -112,7 +114,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
                 color="primary"
                 className="text-white bg-primary h-10 leading-10 px-4  rounded-md shadow-sm hover:bg-primary/90 transition-colors"
               >
-                立即购买
+                获得报价
               </a>
             </div>
           </div>

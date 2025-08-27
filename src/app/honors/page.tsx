@@ -60,7 +60,7 @@ const HonorsPage: React.FC = () => {
   }, [isModalOpen, nextImage, prevImage]);
 
   return (
-    <div className="min-h-screen  font-sans">
+    <div className="min-h-screen  font-sans bg-gray-100">
       {/* Banner区域 */}
       <div className="relative h-72 md:h-96 overflow-hidden bg-blue-900 group">
         {/* 背景图和叠加效果 */}
@@ -87,11 +87,11 @@ const HonorsPage: React.FC = () => {
         </div>
 
         {/* 荣誉资质网格 */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {honors.map((honor, index) => (
             <div
               key={honor.id}
-              className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group"
+              className="bg-white rounded-xl  overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group"
               onClick={() => openPreview(honor.image, index)}
             >
               {/* 图片容器 */}
@@ -115,13 +115,9 @@ const HonorsPage: React.FC = () => {
 
               {/* 内容区域 */}
               <div className="p-6 text-center border-t border-gray-100">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                <h3 className="text-base font-semibold text-gray-800 mb-2">
                   {honor.title}
                 </h3>
-                <p className="text-gray-500 text-sm flex items-center justify-center gap-1">
-                  <span>点击查看详情</span>
-                  <ChevronRight size={16} />
-                </p>
               </div>
             </div>
           ))}

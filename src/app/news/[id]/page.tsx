@@ -1,5 +1,4 @@
 import { NewsList, NewsItem } from "@/app/config/news";
-import { Image } from "@heroui/react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -71,19 +70,8 @@ const NewsDetail: React.FC<{ params: Promise<{ id: string }> }> = async ({
             <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
               {news.title}
             </h1>
-
-            {news.imageUrl && (
-              <div className="mb-8 rounded-lg overflow-hidden">
-                <Image
-                  src={news.imageUrl}
-                  alt={news.title}
-                  className="w-full h-auto"
-                />
-              </div>
-            )}
-
             <div
-              className="prose max-w-none text-gray-700"
+              className="prose max-w-none text-gray-700 [&>p]:leading-8  [&>p]:mb-4 indent-8"
               dangerouslySetInnerHTML={{ __html: news.content }}
             />
           </div>

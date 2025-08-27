@@ -15,19 +15,35 @@ import {
   NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
+  Button,
 } from "@heroui/react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Search } from "lucide-react";
+import { useCallback, useState } from "react";
+import SearchContainer from "./Search";
 export default function Header() {
+  const [isOpen, setIsOpen] = useState<string>("");
+  const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
+  const handleMouseEnter = useCallback((href?: string) => {
+    setIsOpen(href || "");
+  }, []);
+  console.log(isOpen);
+  const handleMouseLeave = useCallback(() => {
+    setIsOpen("");
+  }, []);
   return (
     <Navbar
       maxWidth="xl"
       className="h-20 border-b border-gray-200 bg-gray-50"
       classNames={{ wrapper: "px-3" }}
+      onMouseLeave={() => handleMouseLeave()}
     >
       <NavbarBrand>
         <Link href="/">
           <Image src="/images/site_logo.png" className="h-16" alt="logo" />
         </Link>
+        <span className="text-2xl ml-4 text-primary hidden sm:block">
+          懂工具·更懂你
+        </span>
       </NavbarBrand>
       <NavbarContent className="sm:hidden" justify="center">
         <NavbarMenuToggle />
@@ -45,10 +61,17 @@ export default function Header() {
         {navConfig.map((item, index) => {
           if (item.children?.length) {
             return (
-              <Dropdown offset={30} showArrow key={index}>
-                <NavbarItem>
-                  <DropdownTrigger>
-                    <Link color="foreground" href={item.href}>
+              <Dropdown
+                offset={30}
+                showArrow
+                key={index}
+                isOpen={isOpen === item.href}
+                onMouseLeave={() => handleMouseLeave()}
+                onMouseEnter={() => handleMouseEnter(item.href)}
+              >
+                <NavbarItem onMouseEnter={() => handleMouseEnter(item.href)}>
+                  <DropdownTrigger trigger="hover">
+                    <Link color="foreground">
                       {item.label}
                       <ChevronDown color="#ccc" className="pl-1" size={20} />
                     </Link>
@@ -72,9 +95,7 @@ export default function Header() {
                               startContent={item.icon}
                               className="my-1 text-black data-[hover=true]:bg-primary data-[hover=true]:text-white"
                             >
-                              <Link color="foreground" href={item.href}>
-                                {item.label}
-                              </Link>
+                              <Link color="foreground">{item.label}1</Link>
                             </DropdownItem>
                           ))}
                         </DropdownSection>
@@ -89,7 +110,7 @@ export default function Header() {
                           color="danger"
                           startContent={child.icon}
                         >
-                          <Link color="foreground" href={item.href}>
+                          <Link color="foreground" href={child.href}>
                             {child.label}
                           </Link>
                         </DropdownItem>
@@ -101,7 +122,11 @@ export default function Header() {
             );
           } else {
             return (
-              <NavbarItem key={index}>
+              <NavbarItem
+                key={index}
+                onMouseLeave={() => handleMouseLeave()}
+                onMouseEnter={() => handleMouseEnter(item.href)}
+              >
                 <Link color="foreground" href={item.href}>
                   {item.label}
                 </Link>
@@ -110,6 +135,13 @@ export default function Header() {
           }
         })}
       </NavbarContent>
+      <Button variant="light" isIconOnly onPress={() => setIsSearchOpen(true)}>
+        <Search />
+      </Button>
+      <SearchContainer
+        isOpen={isSearchOpen}
+        onClose={() => setIsSearchOpen(false)}
+      />
     </Navbar>
   );
 }
