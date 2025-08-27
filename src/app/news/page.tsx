@@ -15,8 +15,8 @@ const NewsPage: FC = () => {
           <p className="text-xl text-primary">NEWS CENTER</p>
         </div>
         <div className="max-w-7xl -mt-60  mx-auto py-16">
-          <div className="flex gap-10 shadow-md rounded-lg bg-white overflow-hidden">
-            <div className="max-w-[40%]">
+          <div className="md:flex gap-10 shadow-md rounded-lg bg-white overflow-hidden">
+            <div className="md:max-w-[40%]">
               <Link href={`/news/${NewsList[0].id}`}>
                 <Image src={NewsList[0].imageUrl} alt="newsbg" />
               </Link>
