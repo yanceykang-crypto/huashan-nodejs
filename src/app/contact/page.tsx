@@ -121,19 +121,18 @@ const ContactPage = () => {
     }
   };
   return (
-    <div className="font-sans min-h-screen flex flex-col bg-gray-50 relative">
-      <div className="bg-black opacity-50 h-140 w-full fixed left-0 top-0 z-0"></div>
+    <div className="font-sans min-h-screen flex flex-col bg-white relative">
       <Image
         src="/images/partnerbg.png"
         alt=""
-        className="h-140 w-100vw rounded-none fixed top-0 left-0 z-0"
+        className="h-110 w-100vw rounded-none  top-0 left-0 z-0"
         classNames={{
-          wrapper: "h-140 !w-full rounded-none fixed top-0 left-0 !max-w-full",
-          img: "h-140 !w-full rounded-none object-cover",
+          wrapper: "h-110 !w-full rounded-none  top-0 left-0 !max-w-full",
+          img: "h-110 !w-full rounded-none object-cover",
         }}
       />
       {/* 页面标题区域 */}
-      <div className="md:w-6xl w-full md:flex justify-between m-auto z-10 mt-40 shadow-2xl bg-white">
+      <div className="md:w-6xl w-full md:flex justify-between m-auto z-10 -mt-70  bg-white">
         <div className="bg-primary md:flex-1 p-5 flex flex-col justify-center items-center">
           <h1 className="md:text-3xl text-2xl font-bold text-white">
             化善智能装备（东莞）有限公司
@@ -155,11 +154,11 @@ const ContactPage = () => {
         </div>
       </div>
       {/* 主要内容区域 */}
-      <main className="flex-grow w-full py-12 px-4 md:px-0  z-10">
+      <main className="flex-grow w-full py-12 px-4 md:px-0  z-10 bg-white mt-5">
         <div className="max-w-6xl mx-auto">
           <div className="grid ">
             {/* 联系表单 */}
-            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-white rounded-xl p-8 transition-shadow duration-300">
               <h2 className="text-3xl font-bold text-primary mb-6 text-center">
                 客户留言
               </h2>

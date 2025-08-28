@@ -15,6 +15,18 @@ export const ProductCategory = {
   electric: "电动工具",
   manual: "手动工具",
 };
+export const brandCate = [
+  "/images/apex.png",
+  "/images/SNAP.png",
+  "/images/kemp_1.png",
+  "/images/weller.png",
+  "/images/MATCH.png",
+  "/images/cleco.png",
+  "/images/milw.png",
+  "/images/FEINLOGO@2x.png",
+  "/images/LICOTA.png",
+  "/images/waganer.png",
+];
 export const ProductList: ProductItem[] = [
   {
     id: "OP8Nj5Be8b",

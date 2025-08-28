@@ -165,11 +165,11 @@ export const navConfig: NavConfig[] = [
     children: [
       {
         label: "资质证书",
-        href: "/honors",
+        href: "/honors?type=certificate",
       },
       {
         label: "授权证书",
-        href: "/honors",
+        href: "/honors?type=license",
       },
     ],
   },

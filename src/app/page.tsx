@@ -32,7 +32,9 @@ export default function Home() {
                       onMouseEnter={() => setActive(key)}
                     >
                       {item.icon}
-                      <p className="m-2 text-xs md:text-base">{item.label}</p>
+                      <p className="m-2 text-xs md:text-base font-bold">
+                        {item.label}
+                      </p>
                     </div>
                   );
                 })}
@@ -98,17 +100,19 @@ export default function Home() {
               {AgentBrandConfig.map((item, index) => {
                 return (
                   <div
-                    className="w-full border border-gray-300 h-25 flex justify-center items-center"
+                    className="w-full border border-gray-300 h-35 flex justify-center items-center"
                     key={index}
                   >
                     <Image
                       src={item}
                       alt="item"
-                      className="max-w-[85%] max-h-11"
+                      className="max-w-[85%] max-h-25"
                       classNames={{
-                        img: "text-center",
+                        img: "text-center h-full object-contain !max-w-[85%]",
                         wrapper:
                           "w-full text-center flex justify-center items-center",
+                        zoomedWrapper:
+                          "w-full h-full flex justify-center items-center",
                       }}
                     />
                   </div>

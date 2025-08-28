@@ -27,7 +27,7 @@ export const theme = {
           "700": "#9a1800",
           "800": "#711200",
           "900": "#470b00",
-          foreground: "#fffff",
+          foreground: "#ffffff",
           DEFAULT: "#e72418",
         },
         secondary: {
@@ -41,7 +41,7 @@ export const theme = {
           "700": "#4e1a82",
           "800": "#39135f",
           "900": "#240c3c",
-          foreground: "#fffff",
+          foreground: "#ffffff",
           DEFAULT: "#7828c8",
         },
         success: {

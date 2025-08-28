@@ -39,6 +39,13 @@ export default function RootLayout({
     >
       <head>
         <meta charSet="utf-8" />
+        <meta property="og:title" content="化善智能装备制造" />
+        <meta
+          property="og:description"
+          content="化善智能装备制造 - 专业的工业自动化解决方案提供商"
+        />
+        <meta property="og:image" content="/logo.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body className={`${lexend.className} `}>
         {/* <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm"> */}

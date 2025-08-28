@@ -25,7 +25,7 @@ const Page: FC = () => {
                   <Image
                     src={item}
                     alt="item"
-                    className="max-w-[85%] max-h-11"
+                    className="max-w-[85%] max-h-25"
                     classNames={{
                       img: "text-center h-full object-contain !max-w-[85%]",
                       wrapper:

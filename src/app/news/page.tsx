@@ -16,9 +16,16 @@ const NewsPage: FC = () => {
         </div>
         <div className="max-w-7xl -mt-60  mx-auto py-16">
           <div className="md:flex gap-10 shadow-md rounded-lg bg-white overflow-hidden">
-            <div className="md:max-w-[40%]">
+            <div className="md:max-w-[50%] w-[50%]">
               <Link href={`/news/${NewsList[0].id}`}>
-                <Image src={NewsList[0].imageUrl} alt="newsbg" />
+                <Image
+                  src={NewsList[0].imageUrl}
+                  alt="newsbg"
+                  classNames={{
+                    img: "h-70 w-full object-cover",
+                    wrapper: "h-full w-full !max-w-full",
+                  }}
+                />
               </Link>
             </div>
             <div className="p-10">
@@ -47,7 +54,7 @@ const NewsPage: FC = () => {
                       alt={news.title}
                       className="w-full h-full object-cover"
                       classNames={{
-                        img: "transition-transform duration-500 hover:scale-105",
+                        img: "transition-transform duration-500 hover:scale-105 content-cover",
                       }}
                     />
                   </div>

@@ -1,16 +1,45 @@
 "use client";
-import React, { useState, useEffect, useCallback } from "react";
-import { Button, Image } from "@heroui/react";
-import { ArrowLeft, ArrowRight, ZoomIn, X, ChevronRight } from "lucide-react";
+import React, { Suspense } from "react";
 import { honors } from "../config/honors";
+import { useState, useEffect, useCallback } from "react";
+import { Button, Image } from "@heroui/react";
+import { ArrowLeft, ArrowRight, ZoomIn, X } from "lucide-react";
+import { useSearchParams, useRouter } from "next/navigation";
 // 定义荣誉资质数据
 
+// 主页面组件
 const HonorsPage: React.FC = () => {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex items-center justify-center">
+          加载中...
+        </div>
+      }
+    >
+      <HonorsContent />
+    </Suspense>
+  );
+};
+
+// 客户端组件 - 包含所有逻辑
+const HonorsContent: React.FC = () => {
   // 预览状态管理
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  // 从路由参数中获取当前选中的分类
+  const category = searchParams.get("type") || "all";
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [animationCompleted, setAnimationCompleted] = useState(false);
+
+  // 根据分类筛选产品
+  const filteredHonors =
+    category === "all"
+      ? honors
+      : honors.filter((item) => item.type === category);
 
   // 打开预览
   const openPreview = (image: string, index: number) => {
@@ -33,17 +62,19 @@ const HonorsPage: React.FC = () => {
 
   // 上一张
   const prevImage = useCallback(() => {
-    const newIndex = currentIndex === 0 ? honors.length - 1 : currentIndex - 1;
+    const newIndex =
+      currentIndex === 0 ? filteredHonors.length - 1 : currentIndex - 1;
     setCurrentIndex(newIndex);
-    setSelectedImage(honors[newIndex].image);
-  }, [currentIndex]);
+    setSelectedImage(filteredHonors[newIndex].image);
+  }, [currentIndex, filteredHonors]);
 
   // 下一张
   const nextImage = useCallback(() => {
-    const newIndex = currentIndex === honors.length - 1 ? 0 : currentIndex + 1;
+    const newIndex =
+      currentIndex === filteredHonors.length - 1 ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
-    setSelectedImage(honors[newIndex].image);
-  }, [currentIndex]);
+    setSelectedImage(filteredHonors[newIndex].image);
+  }, [currentIndex, filteredHonors]);
 
   // 键盘导航
   useEffect(() => {
@@ -58,6 +89,24 @@ const HonorsPage: React.FC = () => {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isModalOpen, nextImage, prevImage]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!isModalOpen) return;
+
+      if (e.key === "Escape") closePreview();
+      if (e.key === "ArrowLeft") prevImage();
+      if (e.key === "ArrowRight") nextImage();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isModalOpen, nextImage, prevImage]);
+
+  const handleCategoryChange = (newCategory: string) => {
+    // 根据分类切换路由参数
+    router.push(`/honors?type=${encodeURIComponent(newCategory)}`);
+  };
 
   return (
     <div className="min-h-screen  font-sans bg-gray-100">
@@ -87,8 +136,30 @@ const HonorsPage: React.FC = () => {
         </div>
 
         {/* 荣誉资质网格 */}
+        <div className="flex flex-wrap gap-3 mb-10">
+          <Button
+            onPress={() => handleCategoryChange("license")}
+            className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${
+              category === "license"
+                ? "bg-primary text-white shadow-md"
+                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+            }`}
+          >
+            授权证书
+          </Button>
+          <Button
+            onPress={() => handleCategoryChange("certificate")}
+            className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${
+              category === "certificate"
+                ? "bg-primary text-white shadow-md"
+                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+            }`}
+          >
+            资质证书
+          </Button>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {honors.map((honor, index) => (
+          {filteredHonors.map((honor, index) => (
             <div
               key={honor.id}
               className="bg-white rounded-xl  overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group"
@@ -191,10 +262,10 @@ const HonorsPage: React.FC = () => {
           {/* 底部信息 */}
           <div className="absolute bottom-6 left-0 right-0 text-center text-white z-10 bg-gradient-to-t from-black to-transparent py-4">
             <p className="text-lg font-medium mb-1">
-              {honors[currentIndex].title}
+              {filteredHonors[currentIndex].title}
             </p>
             <p className="text-sm opacity-80">
-              {currentIndex + 1} / {honors.length}
+              {currentIndex + 1} / {filteredHonors.length}
             </p>
           </div>
         </div>

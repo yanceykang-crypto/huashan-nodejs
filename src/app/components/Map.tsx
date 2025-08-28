@@ -18,21 +18,17 @@ const Map: FC = () => {
       });
     }
   }, []);
-  const onMarkerClick = () => {
-    console.log("marker clicked");
-    setMapLoading(!mapLoading);
-  };
+
   useEffect(() => {
     if (amapLoaded) {
       const map = new amapLoaded.Map("map-container", {
         center: [113.7289, 22.987976],
         zoom: 18,
       });
-      const marker = new amapLoaded.Marker({
+      new amapLoaded.Marker({
         map: map,
         position: [113.7289, 22.987976], //位置
       });
-      marker.on("click", onMarkerClick);
       setMapLoading(true);
     }
   }, [amapLoaded]);

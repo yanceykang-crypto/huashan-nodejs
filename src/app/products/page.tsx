@@ -1,5 +1,5 @@
 "use client";
-import { ProductList, ProductCategory } from "@/app/config/products";
+import { ProductList, ProductCategory, brandCate } from "@/app/config/products";
 import Link from "next/link";
 import { Code, Image } from "@heroui/react";
 import { useSearchParams, useRouter } from "next/navigation";
@@ -46,6 +46,27 @@ function ProductContent() {
                 }`}
               >
                 {ProductCategory[cat as keyof typeof ProductCategory]}
+              </button>
+            );
+          })}
+        </div>
+        <div className="flex flex-wrap gap-3 mt-5">
+          {brandCate.map((cat) => {
+            return (
+              <button
+                key={cat}
+                className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${
+                  category === cat
+                    ? "bg-primary text-white shadow-md"
+                    : " text-gray-700 hover:bg-gray-200"
+                }`}
+              >
+                <Image
+                  src={cat}
+                  className="h-10"
+                  alt="logo"
+                  classNames={{ img: "max-w-15 object-contain" }}
+                />
               </button>
             );
           })}

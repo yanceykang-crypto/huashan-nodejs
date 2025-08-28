@@ -1,12 +1,6 @@
 "use client";
 import CountUp from "react-countup";
-import {
-  BadgeJapaneseYen,
-  Pocket,
-  Handshake,
-  ShieldUser,
-  UsersRound,
-} from "lucide-react";
+
 import { teamMembers } from "../config/about";
 import { Divider, Image } from "@heroui/react";
 // 定义页面元数据
@@ -15,31 +9,31 @@ import { Divider, Image } from "@heroui/react";
 const values = [
   {
     title: "专业",
-    icon: <Handshake className="w-8 h-8 text-blue-600" />,
+    icon: "/images/pro.png",
     description: "高端产品 专业技术专业维护服务体系",
     color: "blue",
   },
   {
     title: "品 牌",
-    icon: <Pocket className="w-8 h-8 text-purple-600" />,
+    icon: "/images/pinpan.png",
     description: "十大国际品牌卓越品质",
     color: "purple",
   },
   {
     title: "价 格",
-    icon: <BadgeJapaneseYen className="w-8 h-8 text-green-600" />,
+    icon: "/images/price.png",
     description: "批量采购库存价格优势",
     color: "green",
   },
   {
     title: "保 障",
-    icon: <ShieldUser className="w-8 h-8 text-orange-600" />,
+    icon: "/images/tui.png",
     description: "可靠完善的退换货保障",
     color: "orange",
   },
   {
     title: "服 务",
-    icon: <UsersRound className="w-8 h-8 text-red-600" />,
+    icon: "/images/service.png",
     description: "专业技术人员售前售中售后全程服务",
     color: "red",
   },
@@ -58,13 +52,8 @@ export default function AboutPage() {
           classNames={{ wrapper: "absolute inset-0 w-full h-full z-0" }}
         />
       </div>
-      <div className="max-w-7xl  px-4 sm:px-6 lg:px-8 md:flex -mt-42 m-auto z-10 gap-10">
-        <Image
-          src={
-            "http://www.dghuashan.com/template/HS-web/images/about_content.png"
-          }
-          alt="关于我们"
-        />
+      <div className="max-w-7xl  px-4 sm:px-6 lg:px-8 md:flex -mt-42 m-auto z-10 gap-10 pb-15">
+        <Image src={"/images/about_content.png"} alt="关于我们" />
         <div className="relative z-10">
           <div className="md:text-white pt-15">
             <h1 className="text-2xl">
@@ -88,7 +77,7 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
-      <section className="py-16 bg-cover">
+      <section className="py-16 bg-cover bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div>
             <h1 className="text-3xl">After Service</h1>
@@ -123,28 +112,20 @@ export default function AboutPage() {
       {/* 企业文化 */}
       <section className="py-16 bg-cover  bg-[url('/images/kuhu.bg.png')]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center text-gray-100">
-            诚恳守信 客户为本
-          </h2>
-          <h3 className="text-base font-semibold mb-10 text-center text-gray-100">
-            广纳各方意见不断进步，以无比的责任感和优质产品及服务得到客户信赖
-            <br />
-            不是让客户买的多 而是让客户买的对
-          </h3>
+          <div className="flex items-center flex-col">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center text-primary">
+              诚恳守信 客户为本
+            </h2>
+            <Divider className="bg-primary h-1 w-20"></Divider>
+            <h3 className="text-base font-semibold m-10 text-center text-gray-100">
+              广纳各方意见不断进步，以无比的责任感和优质产品及服务得到客户信赖
+              <br />
+              不是让客户买的多 而是让客户买的对
+            </h3>
+          </div>
 
           <div className="flex  bg-[url('/images/purpose_bg.png')]">
             {values.map((value, index) => {
-              // 根据颜色设置不同的背景色
-              const bgColor =
-                value.color === "blue"
-                  ? "bg-blue-100"
-                  : value.color === "purple"
-                  ? "bg-purple-100"
-                  : value.color === "green"
-                  ? "bg-green-100"
-                  : value.color === "orange"
-                  ? "bg-orange-100"
-                  : "bg-red-100";
               return (
                 <>
                   <div
@@ -153,9 +134,9 @@ export default function AboutPage() {
                   >
                     <div className="h-full flex flex-col overflow-hidden items-center justify-center p-6  border-gray-200 shadow-sm transition-all duration-300 hover:shadow-xl">
                       <div
-                        className={`w-16 h-16 rounded-full ${bgColor} flex items-center justify-center mb-6 group-hover:hidden`}
+                        className={`w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:hidden`}
                       >
-                        {value.icon}
+                        <Image src={value.icon} alt={value.title} />
                       </div>
                       {/* <div className="text-center">
                         <h4 className="text-lg font-bold mb-3 text-gray-800">
@@ -166,9 +147,9 @@ export default function AboutPage() {
                     </div>
                     <div className="absolute justify-center bg-primary/50 top-100 group-hover:top-0 right-0 h-full w-full flex flex-col overflow-hidden items-center p-6  border-gray-200 shadow-sm transition-all duration-300 hover:shadow-xl">
                       <div
-                        className={`w-16 h-16 rounded-full ${bgColor} flex items-center justify-center mb-6`}
+                        className={`w-16 h-16 rounded-full  flex items-center justify-center mb-6`}
                       >
-                        {value.icon}
+                        <Image src={value.icon} alt={value.title} />
                       </div>
                       <div className="text-center">
                         <h4 className="text-lg font-bold mb-3 text-white">
