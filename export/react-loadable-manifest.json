@@ -1,0 +1,75 @@
+{
+  "../node_modules/@heroui/accordion/dist/chunk-CI6JLEHY.mjs -> @heroui/dom-animation": {
+    "id": 96974,
+    "files": [
+      "static/chunks/355.e5d8bea266c62028.js"
+    ]
+  },
+  "../node_modules/@heroui/calendar/dist/chunk-MNZWV6CN.mjs -> @heroui/dom-animation": {
+    "id": 96974,
+    "files": [
+      "static/chunks/355.e5d8bea266c62028.js"
+    ]
+  },
+  "../node_modules/@heroui/modal/dist/chunk-NWAOTABO.mjs -> @heroui/dom-animation": {
+    "id": 96974,
+    "files": [
+      "static/chunks/355.e5d8bea266c62028.js"
+    ]
+  },
+  "../node_modules/@heroui/navbar/dist/chunk-GACT3GHG.mjs -> @heroui/dom-animation": {
+    "id": 96974,
+    "files": [
+      "static/chunks/355.e5d8bea266c62028.js"
+    ]
+  },
+  "../node_modules/@heroui/navbar/dist/chunk-SOOT4SRX.mjs -> @heroui/dom-animation": {
+    "id": 96974,
+    "files": [
+      "static/chunks/355.e5d8bea266c62028.js"
+    ]
+  },
+  "../node_modules/@heroui/popover/dist/chunk-VAMG3REK.mjs -> @heroui/dom-animation": {
+    "id": 96974,
+    "files": [
+      "static/chunks/355.e5d8bea266c62028.js"
+    ]
+  },
+  "../node_modules/@heroui/popover/dist/chunk-Z57F4COC.mjs -> @heroui/dom-animation": {
+    "id": 96974,
+    "files": [
+      "static/chunks/355.e5d8bea266c62028.js"
+    ]
+  },
+  "../node_modules/@heroui/ripple/dist/chunk-QHRCZSEO.mjs -> @heroui/dom-animation": {
+    "id": 96974,
+    "files": [
+      "static/chunks/822-34451e2c8fa90279.js",
+      "static/chunks/736.e5d8bea266c62028.js"
+    ]
+  },
+  "../node_modules/@heroui/toast/dist/chunk-AJNJBQML.mjs -> ./src-UW24ZMRV.mjs": {
+    "id": 44290,
+    "files": [
+      "static/chunks/290.112ae66ce474890f.js"
+    ]
+  },
+  "../node_modules/@heroui/toast/dist/chunk-U2DWYKGQ.mjs -> framer-motion": {
+    "id": 3449,
+    "files": [
+      "static/chunks/449.beb76cf0b1dc7b93.js"
+    ]
+  },
+  "../node_modules/@heroui/tooltip/dist/chunk-BOOVDPB6.mjs -> @heroui/dom-animation": {
+    "id": 96974,
+    "files": [
+      "static/chunks/355.e5d8bea266c62028.js"
+    ]
+  },
+  "app/components/Map.tsx -> @amap/amap-jsapi-loader": {
+    "id": 41362,
+    "files": [
+      "static/chunks/362.bf009f23e14406bd.js"
+    ]
+  }
+}

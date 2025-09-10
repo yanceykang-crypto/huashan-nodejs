@@ -157,6 +157,10 @@ export const navConfig: NavConfig[] = [
         //   },
         // ],
       },
+      {
+        label: "喷涂工具",
+        href: "/products?category=spraying",
+      },
     ],
   },
   {
