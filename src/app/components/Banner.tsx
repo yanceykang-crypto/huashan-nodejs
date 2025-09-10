@@ -19,7 +19,7 @@ const Banner = () => {
   );
   return (
     <Swiper
-      className=" w-full swiper-super-flow h-30 sm:h-[320px] md:h-[400px] lg:h-[600px] "
+      className=" w-full swiper-super-flow"
       spaceBetween={30}
       centeredSlides={true}
       autoplay={{
@@ -33,11 +33,10 @@ const Banner = () => {
       onAutoplayTimeLeft={onAutoplayTimeLeft}
     >
       {bannerConfig.map((item, index) => (
-        <SwiperSlide key={index} className="h-full">
+        <SwiperSlide key={index}>
           <Image
             src={item.src}
-            className="rounded-none h-full !w-dvw"
-            classNames={{ wrapper: "h-full" }}
+            className="rounded-none !w-dvw"
             alt={item.alt}
           />
         </SwiperSlide>

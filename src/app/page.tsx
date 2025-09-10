@@ -18,8 +18,8 @@ export default function Home() {
           <div className="max-w-7xl m-auto px-2 md:px-0">
             <div className="md:flex sm:block justify-between items-center md:py-10 py-5">
               <div className="flex flex-col">
-                <h2 className="md:text-5xl font-bold">Sales Scope</h2>
-                <h3 className="md:text-4xl font-bold mt-2.5">销售范围</h3>
+                <h2 className="md:text-5xl font-bold">销售范围</h2>
+                <h3 className="md:text-3xl font-bold mt-2.5">Sales Scope</h3>
               </div>
               <div className="flex gap-1 md:gap-10 mt-10 md:mt-0 justify-between">
                 {SalesScope.map((item, key) => {
@@ -61,10 +61,10 @@ export default function Home() {
             <div className="mt-10 md:mt-20 relative">
               <div className="bg-primary w-full md:w-150 md:h-160 px-10 py-8 md:py-15">
                 <h1 className="text-white text-3xl md:text-5xl font-extrabold">
-                  Brand Video
+                  公司宣传视频
                 </h1>
-                <h2 className="text-white text-xl md:text-2xl font-bold mt-5">
-                  品牌视频
+                <h2 className="text-white text-xl md:text-xl font-bold mt-5">
+                  Company promotional video
                 </h2>
                 <Divider className="bg-white h-0.5 md:h-1 my-1 md:my-5 w-20 md:w-25 md:mt-25"></Divider>
                 <p className="text-white text-base md:text-2xl mt-5 md:mt-40 font-extrabold">
@@ -74,7 +74,7 @@ export default function Home() {
                   Take you to know more about us
                 </p>
               </div>
-              <div className="bg-amber-500  md:w-[70%] md:h-110 md:absolute md:right-0 md:top-25">
+              <div className="md:w-[65%] md:h-110 md:absolute md:right-0 md:top-25">
                 <video
                   controls
                   loop
@@ -121,7 +121,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="w-full bg-[url(/images/cus_bg.png)] bg-contain bg-bottom pb-20 px-2 md:px-0">
+        <div className="w-full bg-[url(/images/cus_bg.png)] bg-cover bg-bottom pb-20 px-2 md:px-0">
           <div className="max-w-7xl mx-auto">
             <div className="text-center p-6 text-white">
               <h1 className="text-3xl md:text-5xl font-extrabold md:mt-10 md:mb-5">
@@ -162,7 +162,7 @@ export default function Home() {
                 <a href={`/news/${NewsList[0].id}`}>
                   <Image
                     alt=""
-                    className="md:h-101 md:w-full object-cover "
+                    className="md:h-101 md:w-full object-contain "
                     src={NewsList[0].imageUrl}
                   ></Image>
                   <div className="w-full p-4 absolute bottom-0 left-0 z-10 bg-[#e6241b66] text-white">
@@ -186,7 +186,7 @@ export default function Home() {
                         className="group group-hover:border-1 cursor-pointer"
                         key={index}
                       >
-                        <Link href="/news/1" className="block">
+                        <Link href={`/news/${item.id}`} className="block">
                           <h3
                             className={cn(
                               "text-xl md:text-2xl group-hover:text-primary pr-30 md:pr-40 relative  overflow-hidden text-ellipsis line-clamp-1",

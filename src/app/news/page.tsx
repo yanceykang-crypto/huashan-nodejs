@@ -22,7 +22,7 @@ const NewsPage: FC = () => {
                   src={NewsList[0].imageUrl}
                   alt="newsbg"
                   classNames={{
-                    img: "h-70 w-full object-cover",
+                    img: "h-70 w-full object-contain",
                     wrapper: "h-full w-full !max-w-full",
                   }}
                 />

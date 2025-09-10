@@ -111,7 +111,7 @@ const HonorsContent: React.FC = () => {
   return (
     <div className="min-h-screen  font-sans bg-gray-100">
       {/* Banner区域 */}
-      <div className="relative h-72 md:h-96 overflow-hidden bg-blue-900 group">
+      <div className="relative py-20 overflow-hidden bg-primary group">
         {/* 背景图和叠加效果 */}
         <div className="absolute inset-0 bg-[url('/images/about_bg.png')] bg-cover bg-center opacity-20 group-hover:opacity-30 transition-opacity"></div>
         <div className="absolute inset-0"></div>
@@ -121,20 +121,17 @@ const HonorsContent: React.FC = () => {
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight transform transition-transform duration-500 group-hover:scale-105">
             资质证书
           </h1>
-          <p className="text-xl md:text-2xl text-blue-50 max-w-2xl mx-auto opacity-90 font-light leading-relaxed">
-            展示公司获得的各类荣誉和资质认证，见证我们的专业与实力
-          </p>
+          <div className="text-xl md:text-xl text-blue-50 max-w-4xl mt-10 mx-auto opacity-90 font-light leading-relaxed">
+            资质认证，实力的基石。
+            <p>
+              化善智能装备（东莞）有限公司，始终将专业、合规与品质作为发展的核心。我们深知，权威认可是客户信任的起点。以下资质与认证，不仅是对我们实力的肯定，更是我们对客户承诺的坚实保障。
+            </p>
+            <p>我们荣幸地向您展示部分关键资质证书。</p>
+          </div>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-        {/* 说明文字 */}
-        <div className="text-center mb-12">
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            公司自成立以来，始终坚持高标准、严要求，获得了多项行业资质和荣誉认证，这是对我们专业能力和服务质量的肯定。
-          </p>
-        </div>
-
         {/* 荣誉资质网格 */}
         <div className="flex flex-wrap gap-3 mb-10">
           <Button

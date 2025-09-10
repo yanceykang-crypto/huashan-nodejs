@@ -67,6 +67,14 @@ const Footer = () => {
                     手动工具
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/products?category=spraying"
+                    className="hover:text-white transition-colors"
+                  >
+                    喷涂设备
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>

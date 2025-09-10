@@ -10,31 +10,31 @@ const values = [
   {
     title: "专业",
     icon: "/images/pro.png",
-    description: "高端产品 专业技术专业维护服务体系",
+    description: "高端产品、专业技术专业维护服务体系。",
     color: "blue",
   },
   {
     title: "品 牌",
     icon: "/images/pinpan.png",
-    description: "十大国际品牌卓越品质",
+    description: "十大国际品牌卓越品质。",
     color: "purple",
   },
   {
     title: "价 格",
     icon: "/images/price.png",
-    description: "批量采购库存价格优势",
+    description: "批量采购库存价格优势。",
     color: "green",
   },
   {
     title: "保 障",
     icon: "/images/tui.png",
-    description: "可靠完善的退换货保障",
+    description: "可靠完善的退换货保障。",
     color: "orange",
   },
   {
     title: "服 务",
     icon: "/images/service.png",
-    description: "专业技术人员售前售中售后全程服务",
+    description: "专业技术人员售前售中售后全程服务。",
     color: "red",
   },
 ];
@@ -53,7 +53,7 @@ export default function AboutPage() {
         />
       </div>
       <div className="max-w-7xl  px-4 sm:px-6 lg:px-8 md:flex -mt-42 m-auto z-10 gap-10 pb-15">
-        <Image src={"/images/about_content.png"} alt="关于我们" />
+        <Image src={"/images/about_content.jpg"} width={500} alt="关于我们" />
         <div className="relative z-10">
           <div className="md:text-white pt-15">
             <h1 className="text-2xl">
@@ -80,11 +80,14 @@ export default function AboutPage() {
       <section className="py-16 bg-cover bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div>
-            <h1 className="text-3xl">After Service</h1>
-            <p className="text-lg">售后服务</p>
+            <h1 className="md:text-5xl font-bold">售后服务</h1>
+            <p className="md:text-3xl font-bold mt-2.5">After Service</p>
           </div>
           <div className="text-center py-10">
-            总部设在东莞，在深圳、西安、长沙均设有技术服务办事处，能够及时快速响应客户各项需求。
+            化善智能装备（东莞）有限公司总部设在东莞，
+            <p>
+              在深圳、西安、长沙均设有技术服务办事处，能够及时快速响应客户各项需求。
+            </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {teamMembers.map((member, index) => (
@@ -118,9 +121,9 @@ export default function AboutPage() {
             </h2>
             <Divider className="bg-primary h-1 w-20"></Divider>
             <h3 className="text-base font-semibold m-10 text-center text-gray-100">
-              广纳各方意见不断进步，以无比的责任感和优质产品及服务得到客户信赖
+              广纳各方意见不断进步，以无比的责任感和优质产品及服务得到客户信赖，
               <br />
-              不是让客户买的多 而是让客户买的对
+              不是让客户买的多 而是让客户买的对。
             </h3>
           </div>
 

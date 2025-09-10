@@ -47,12 +47,17 @@ export default function Header() {
             <Image src="/images/site_logo.png" className="h-16" alt="logo" />
           </Link>
           <span
-            className={`text-2xl ml-4 text-primary font-medium hidden sm:block ${myFont.className}`}
+            className={`text-2xl ml-4 text-primary font-light hidden sm:block ${myFont.className}`}
           >
-            懂工具·更懂你
+            <Image
+              src="/images/site_sulg.png"
+              className="h-6"
+              alt="logo"
+              classNames={{ wrapper: "rounded-none", img: "rounded-none" }}
+            />
           </span>
         </NavbarBrand>
-        <NavbarContent className="sm:hidden" justify="center">
+        <NavbarContent className="lg:hidden" justify="center">
           <NavbarMenuToggle />
         </NavbarContent>
         <NavbarMenu className="mt-3 bg-white">
@@ -64,7 +69,7 @@ export default function Header() {
             </NavbarMenuItem>
           ))}
         </NavbarMenu>
-        <NavbarContent className="hidden sm:flex gap-6" justify="center">
+        <NavbarContent className="hidden lg:flex gap-6" justify="center">
           {navConfig.map((item, index) => {
             if (item.children?.length) {
               return (

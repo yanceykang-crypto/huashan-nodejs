@@ -547,7 +547,7 @@ button.swiper-pagination-bullet {
 
 @media (orientation: portrait) {
   .swiper {
-    aspect-ratio: 16/9;
+    aspect-ratio: 64/25;
     height: auto;
   }
 }

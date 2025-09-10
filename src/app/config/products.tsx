@@ -1,3 +1,69 @@
+export const productCateList = [
+  {
+    label: "全部",
+    value: "all",
+  },
+  {
+    label: "气动工具",
+    value: "pneumatic",
+    children: [
+      {
+        label: "肯普KEMP",
+        value: "pneumatic_wrench",
+      },
+      {
+        label: "玛驰MATCH",
+        value: "match",
+      },
+    ],
+  },
+  {
+    label: "电动工具",
+    value: "electric",
+    children: [
+      {
+        label: "CLECO",
+        value: "cleco",
+      },
+      {
+        label: "美沃奇",
+        value: "milw",
+      },
+    ],
+  },
+  {
+    label: "手动工具",
+    value: "manual",
+    children: [
+      {
+        label: "世达工具",
+        value: "shida",
+      },
+      {
+        label: "力可达",
+        value: "likeda",
+      },
+      {
+        label: "实耐宝",
+        value: "realnebao",
+      },
+    ],
+  },
+  {
+    label: "喷涂设备",
+    value: "spraying",
+    children: [
+      {
+        label: "油漆喷涂设备",
+        value: "paint",
+      },
+      {
+        label: "粉末喷涂设备",
+        value: "powder",
+      },
+    ],
+  },
+];
 export interface ProductItem {
   id: string;
   title: string;
@@ -14,6 +80,7 @@ export const ProductCategory = {
   pneumatic: "气动工具",
   electric: "电动工具",
   manual: "手动工具",
+  spraying: "喷涂设备",
 };
 export const brandCate = [
   "/images/apex.png",

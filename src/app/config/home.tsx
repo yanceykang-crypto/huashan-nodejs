@@ -42,15 +42,15 @@ export const SalesScope = [
 
 export const AgentBrandConfig = [
   "/images/apex.png",
-  "/images/SNAP.png",
-  "/images/kemp_1.png",
-  "/images/weller.png",
-  "/images/MATCH.png",
   "/images/cleco.png",
   "/images/milw.png",
+  "/images/kemp_1.png",
+  "/images/waganer.png",
+  "/images/SNAP.png",
+  "/images/weller.png",
   "/images/FEINLOGO@2x.png",
   "/images/LICOTA.png",
-  "/images/waganer.png",
+  "/images/MATCH.png",
 ];
 export const aboutConfig = [
   {
