@@ -1,12 +1,16 @@
-import { ProductList } from "@/app/config/products";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import ProductDetail from "./ProductDetail";
+import {
+  getAllMarkdownDocs,
+  ProductItem,
+} from "@/app/services/markdownService";
 
 interface Params {
   id: string;
 }
 export async function generateStaticParams() {
+  const ProductList = (await getAllMarkdownDocs("products")) as ProductItem[];
   return ProductList.map((product) => ({
     id: product.id,
   }));
@@ -17,6 +21,7 @@ export async function generateMetadata({
   params: Promise<Params>;
 }): Promise<Metadata> {
   const { id } = await params;
+  const ProductList = (await getAllMarkdownDocs("products")) as ProductItem[];
   const product = ProductList.find((product) => product.id === id);
 
   if (!product) {
@@ -32,17 +37,20 @@ export async function generateMetadata({
   };
 }
 
-const ProductDetailPage = async ({ params }: { params: Promise<{ id: string }> }) => {
+const ProductDetailPage = async ({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) => {
   const { id } = await params;
+  const ProductList = (await getAllMarkdownDocs("products")) as ProductItem[];
   const product = ProductList.find((product) => product.id === id);
 
   if (!product) {
     notFound();
   }
 
-  return (
-    <ProductDetail product={product} />
-  );
+  return <ProductDetail product={product} />;
 };
 
 export default ProductDetailPage;

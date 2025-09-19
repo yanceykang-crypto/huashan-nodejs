@@ -1,7 +1,18 @@
-import { NewsList, NewsItem } from "@/app/config/news";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { getNewsItemById } from "@/app/services/markdownService";
+import NewsDetailUI from "@/app/news/components/NewsDetailUI";
+
+interface NewsItem {
+  id: string;
+  title: string;
+  date: string;
+  summary?: string;
+  content: string;
+  author?: string;
+  category?: string;
+  tags?: string[];
+}
 
 // 为新闻详情页生成动态元数据
 export async function generateMetadata({
@@ -10,7 +21,7 @@ export async function generateMetadata({
   params: Promise<{ id: string }>;
 }): Promise<Metadata> {
   const { id } = await params;
-  const news: NewsItem | undefined = NewsList.find((item) => item.id === id);
+  const news: NewsItem | undefined = await getNewsItemById(id);
 
   if (!news) {
     return {
@@ -24,13 +35,11 @@ export async function generateMetadata({
   };
 }
 
-// 在App Router中，page组件可以是异步函数
-const NewsDetail: React.FC<{ params: Promise<{ id: string }> }> = async ({
-  params,
-}) => {
+// 主服务器组件，负责获取数据
+const NewsDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
   // params是一个Promise，需要await
   const { id } = await params;
-  const news: NewsItem | undefined = NewsList.find((item) => item.id === id);
+  const news: NewsItem | undefined = await getNewsItemById(id);
 
   if (!news) {
     notFound();
@@ -40,39 +49,8 @@ const NewsDetail: React.FC<{ params: Promise<{ id: string }> }> = async ({
     <div className="font-sans min-h-screen flex flex-col">
       <main className="flex-grow w-full bg-gray-50 px-3 md:px-0">
         <div className="max-w-4xl m-auto py-16">
-          <div className="mb-8">
-            <Link
-              href="/news"
-              className="text-primary hover:text-primary-600 flex items-center w-fit"
-            >
-              <svg
-                className="w-5 h-5 mr-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
-              返回新闻列表
-            </Link>
-          </div>
-          <div className="bg-white rounded-lg shadow-md p-8">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-              {news.title}
-            </h1>
-            <div className="mb-6">
-              <span className="text-sm text-gray-500">{news.date}</span>
-            </div>
-            <div className="prose max-w-none text-gray-700 [&>p]:leading-8  [&>p]:mb-4 indent-8">
-              {news.content}
-            </div>
-          </div>
+          {/* 渲染客户端UI组件 */}
+          <NewsDetailUI news={news} />
         </div>
       </main>
     </div>

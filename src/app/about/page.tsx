@@ -127,7 +127,7 @@ export default function AboutPage() {
             </h3>
           </div>
 
-          <div className="flex  bg-[url('/images/purpose_bg.png')]">
+          <div className="flex  bg-[url(/images/purpose_bg.png)]">
             {values.map((value, index) => {
               return (
                 <>

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start -p 4000",
     "lint": "next lint"
@@ -12,6 +12,7 @@
     "@amap/amap-jsapi-loader": "^1.0.1",
     "@heroui/react": "^2.8.2",
     "framer-motion": "^12.23.12",
+    "gray-matter": "^4.0.3",
     "lucide-react": "^0.539.0",
     "next": "15.4.6",
     "nodemailer": "^7.0.5",
@@ -19,6 +20,8 @@
     "react-amap": "^1.2.8",
     "react-countup": "^6.5.3",
     "react-dom": "19.1.0",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
     "swiper": "^11.2.10"
   },
   "devDependencies": {

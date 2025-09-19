@@ -25,6 +25,9 @@ const notoSansSC = Noto_Sans_SC({
 export const metadata: Metadata = {
   title: "化善智能装备制造",
   description: "化善智能装备制造 - 专业的工业自动化解决方案提供商",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

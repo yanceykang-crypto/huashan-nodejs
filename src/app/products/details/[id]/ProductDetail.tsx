@@ -1,16 +1,17 @@
 "use client";
-import React, { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { ProductCategory, ProductItem } from "@/app/config/products";
-import { Chip } from "@heroui/react";
+import React, { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { ProductItem } from '@/app/services/markdownService';
+import { productCateList } from '@/app/config/products';
+import { Chip } from '@heroui/react';
 
 interface ProductDetailProps {
   product: ProductItem;
 }
 
 const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
-  const [currImage, setCurrImage] = useState("");
+  const [currImage, setCurrImage] = useState('');
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -67,11 +68,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
           <div>
             <div className="text-sm text-white font-medium mb-2">
               <Chip color="primary">
-                {
-                  ProductCategory[
-                    product.category as keyof typeof ProductCategory
-                  ]
-                }
+                {productCateList.find(cat => cat.value === product.category)?.label || product.category}
               </Chip>
             </div>
             <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">

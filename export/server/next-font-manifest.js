@@ -1,1 +1,0 @@
-self.__NEXT_FONT_MANIFEST='{"pages":{},"app":{"/Users/yangjianxin/Documents/huashan-nodejs/src/app/layout":["static/media/569ce4b8f30dc480-s.p.woff2","static/media/793968fa3513f5d6-s.p.woff2","static/media/a7d1cce8496465df-s.p.woff2","static/media/d2f73345e4cac34a-s.p.ttf"]},"appUsingSizeAdjust":true,"pagesUsingSizeAdjust":false}';

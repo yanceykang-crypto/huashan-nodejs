@@ -86,7 +86,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="w-full bg-[url(/images/agetnt-bg.png)] bg-default-50 bg-contain md:px-0 pb-20">
+        <div className="w-full bg-[url('/images/agetnt-bg.png')] bg-default-50 bg-contain md:px-0 pb-20">
           <div className="max-w-7xl mx-auto">
             <div className="text-center p-6">
               <h1 className="text-3xl md:text-5xl font-extrabold md:mt-10 md:mb-5">
@@ -121,7 +121,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="w-full bg-[url(/images/cus_bg.png)] bg-cover bg-bottom pb-20 px-2 md:px-0">
+        <div className="w-full bg-[url('/images/cus_bg.png')] bg-cover bg-bottom pb-20 px-2 md:px-0">
           <div className="max-w-7xl mx-auto">
             <div className="text-center p-6 text-white">
               <h1 className="text-3xl md:text-5xl font-extrabold md:mt-10 md:mb-5">
