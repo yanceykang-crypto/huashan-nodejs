@@ -1,0 +1,14 @@
+{
+  "/api/contact/route": "/api/contact",
+  "/_not-found/page": "/_not-found",
+  "/favicon.ico/route": "/favicon.ico",
+  "/contact/page": "/contact",
+  "/about/page": "/about",
+  "/news/[id]/page": "/news/[id]",
+  "/honors/page": "/honors",
+  "/partner/page": "/partner",
+  "/news/page": "/news",
+  "/page": "/",
+  "/products/page": "/products",
+  "/products/details/[id]/page": "/products/details/[id]"
+}
