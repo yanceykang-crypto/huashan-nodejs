@@ -4,7 +4,7 @@ import NewsListUI from "./components/NewsListUI";
 // 主服务器组件，负责获取数据
 const NewsPage = async () => {
   // 使用markdown服务获取所有新闻项
-  const newsList = (await getAllMarkdownDocs("news/")) as NewsItem[];
+  const newsList = (await getAllMarkdownDocs("news")) as NewsItem[];
 
   return (
     <div className="font-sans min-h-screen flex flex-col">
