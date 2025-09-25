@@ -13,6 +13,20 @@ features:
 images:
   - "/images/product_imgs/d5159d42-433b-4148-9f59-9a0ce044f464.png"
 description: 可选配复合式传感器可侦测真实扭矩与压力值
-content:
-  - "/images/product_imgs/d5159d42-433b-4148-9f59-9a0ce044f464.png"
 ---
+
+# EPF 传感伺服螺丝起子 / 拧紧工具
+
+![](/images/product_imgs/85691d50-252e-4c92-8e70-13e1155f4988.png)
+
+# EPF 传感伺服螺丝起子, 手持式枪型
+
+![](/images/product_imgs/c94c0b96-9d7b-4d4b-b6b7-89595ea9b566.png)
+
+# EPF 传感伺服螺丝起子, 手持式弯头
+
+![](/images/product_imgs/988d8240-712b-4078-9158-bc44c70c209c.png)
+
+# EPF 传感伺服螺丝起子,拧紧轴 固定式直型
+
+![](/images/product_imgs/0cf6a633-a45f-4089-b778-28dd9f45d5cf.png)

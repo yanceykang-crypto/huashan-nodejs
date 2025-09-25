@@ -31,7 +31,7 @@ export type ProductItem = {
   details: string;
   images: string[];
   features: string[];
-  content?: string[];
+  content?: string;
 };
 
 /**
@@ -123,7 +123,7 @@ export async function getAllMarkdownDocs<T extends NewsItem | ProductItem>(
             details: details || "",
             images: images || [],
             features: features || [],
-            content: content || undefined,
+            content: content || contentHtml,
           } as T;
         }
 

@@ -11,6 +11,14 @@ description:
 images:
   - "/images/product_imgs/34c97f50-16f7-42d3-a5b3-c146b0ab1410.png"
 features:
-content:
-  - "/images/product_imgs/bfbe638a-f311-484a-af6e-9a5277044a32.png"
 ---
+
+# 将一般离合式定扭机构的电动螺丝起子 智能化
+
+![](/images/product_imgs/34c97f50-16f7-42d3-a5b3-c146b0ab1410.png)
+
+# ETS 智能控制器
+
+![](/images/product_imgs/9d39f41e-b98e-40ce-918b-674588d8fe82.png)
+![](/images/product_imgs/a0b9e54b-dbb8-4169-a2ea-4a491a086514.png)
+![](/images/product_imgs/003b0e6f-230a-4cee-9b9f-5a53c8f73fce.png)

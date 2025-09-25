@@ -1,17 +1,17 @@
 "use client";
-import React, { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { ProductItem } from '@/app/services/markdownService';
-import { productCateList } from '@/app/config/products';
-import { Chip } from '@heroui/react';
+import React, { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { ProductItem } from "@/app/services/markdownService";
+import { productCateList } from "@/app/config/products";
+import { Chip } from "@heroui/react";
 
 interface ProductDetailProps {
   product: ProductItem;
 }
 
 const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
-  const [currImage, setCurrImage] = useState('');
+  const [currImage, setCurrImage] = useState("");
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -68,7 +68,8 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
           <div>
             <div className="text-sm text-white font-medium mb-2">
               <Chip color="primary">
-                {productCateList.find(cat => cat.value === product.category)?.label || product.category}
+                {productCateList.find((cat) => cat.value === product.category)
+                  ?.label || product.category}
               </Chip>
             </div>
             <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
@@ -118,22 +119,10 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
         </div>
 
         <div className="border-t border-gray-200 p-6 md:p-8">
-          <h2 className="text-xl font-bold text-gray-800 mb-4">产品详情</h2>
           <div
-            className="prose max-w-none"
-            dangerouslySetInnerHTML={{ __html: product.details }}
+            className="prose max-w-none markdown-body"
+            dangerouslySetInnerHTML={{ __html: product.content || "" }}
           />
-          <div className="w-full grid grid-cols-2 gap-4 mt-5">
-            {product.content?.map((item: string, index: number) => (
-              <Image
-                key={index}
-                src={item}
-                alt={`${product.title} - ${index + 1}`}
-                width={800}
-                height={600}
-              />
-            ))}
-          </div>
         </div>
       </div>
     </div>

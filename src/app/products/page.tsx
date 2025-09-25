@@ -1,12 +1,10 @@
 import { Suspense } from "react";
-import { getAllMarkdownDocs, ProductItem } from "../services/markdownService";
+import { getAllProducts, ProductItem } from "../services/markdownService";
 import { ProductContent } from "./ProductContent";
 
 // 服务器组件，负责获取数据
 const ProductsPage = async () => {
-  const ProductList = (await getAllMarkdownDocs<ProductItem>(
-    "products"
-  )) as ProductItem[];
+  const ProductList = (await getAllProducts()) as ProductItem[];
 
   return (
     <div>
