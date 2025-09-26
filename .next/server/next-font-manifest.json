@@ -1,1 +1,16 @@
-{"pages":{},"app":{"/Users/yangjianxin/Documents/huashan-nodejs/src/app/layout":["static/media/d2f73345e4cac34a-s.p.ttf"]},"appUsingSizeAdjust":true,"pagesUsingSizeAdjust":false}
+{
+  "app": {
+    "[project]/src/app/page": [
+      "static/media/Benmo Qianghei-s.p.323867f9.ttf"
+    ],
+    "[project]/src/app/products/details/[id]/page": [
+      "static/media/Benmo Qianghei-s.p.323867f9.ttf"
+    ],
+    "[project]/src/app/products/page": [
+      "static/media/Benmo Qianghei-s.p.323867f9.ttf"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}

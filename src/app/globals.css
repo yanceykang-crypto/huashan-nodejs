@@ -1764,6 +1764,7 @@ button.swiper-pagination-bullet {
   padding: 4px;
   border: 1px solid #dfe2e5;
   box-shadow: 0 0 0 1px #dfe2e5;
+  margin: 20px auto;
 }
 
 .markdown-body img[align="right"] {

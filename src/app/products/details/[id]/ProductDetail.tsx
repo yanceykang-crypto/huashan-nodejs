@@ -76,36 +76,34 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
               {product.title}
             </h1>
             <p className="text-gray-600 mb-6">{product.description}</p>
-
-            <div className="mb-8">
-              <h2 className="text-lg font-bold text-gray-800 mb-3">产品特点</h2>
-              <ul className="space-y-2">
-                {product.features.length
-                  ? product.features.map((feature: string, index: number) => (
-                      <li key={index} className="flex items-start">
-                        <svg
-                          className="!w-5 !h-5 text-green-500 mr-2 mt-0.5"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        <span className="text-gray-700 flex-1/2">
-                          {feature}
-                        </span>
-                      </li>
-                    ))
-                  : "无特点数据"}
-              </ul>
-            </div>
-
+            {product.features.length > 0 && (
+              <div className="mb-8">
+                <h2 className="text-lg font-bold text-gray-800 mb-3">
+                  产品特点
+                </h2>
+                <ul className="space-y-2">
+                  {product.features.map((feature: string, index: number) => (
+                    <li key={index} className="flex items-start">
+                      <svg
+                        className="!w-5 !h-5 text-green-500 mr-2 mt-0.5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      <span className="text-gray-700 flex-1/2">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
             <div className="flex flex-wrap gap-4">
               <a
                 href="/contact"

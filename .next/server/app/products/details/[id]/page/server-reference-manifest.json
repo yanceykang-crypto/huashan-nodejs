@@ -1,0 +1,60 @@
+{
+  "node": {
+    "00c19c77a679ea28e1bfef9f76961a31c8691c10d9": {
+      "workers": {
+        "app/products/details/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/products/details/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/services/markdownService.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/products/details/[id]/page": "rsc"
+      }
+    },
+    "4024adaf002df9ae50615c28ae9b03015af8c2e198": {
+      "workers": {
+        "app/products/details/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/products/details/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/services/markdownService.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/products/details/[id]/page": "rsc"
+      }
+    },
+    "40a75bf95ca4253111342328abd3b08fdfc9e20411": {
+      "workers": {
+        "app/products/details/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/products/details/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/services/markdownService.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/products/details/[id]/page": "rsc"
+      }
+    },
+    "40bcf7cc09002f04db91567e907b1c4085b1713259": {
+      "workers": {
+        "app/products/details/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/products/details/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/services/markdownService.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/products/details/[id]/page": "rsc"
+      }
+    },
+    "40d7a367f94c150de52f218bd7e14ebe59d5a7580a": {
+      "workers": {
+        "app/products/details/[id]/page": {
+          "moduleId": "[project]/.next-internal/server/app/products/details/[id]/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/services/markdownService.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/products/details/[id]/page": "rsc"
+      }
+    }
+  },
+  "edge": {}
+}

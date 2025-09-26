@@ -124,10 +124,10 @@ export function ProductContent({
                 {productCateList.find((cat) => cat.value === product.category)
                   ?.label || product.category}
               </span>
-              <h2 className="text-xl font-bold text-gray-800 my-2">
+              <h2 className="text-xl font-bold text-gray-800 my-2 h-14 line-clamp-2">
                 {product.title}
               </h2>
-              <p className="text-gray-600 mb-4 line-clamp-2">
+              <p className="text-gray-600 mb-4 line-clamp-2 h-12">
                 {product.description}
               </p>
               <div className="flex justify-between items-center">

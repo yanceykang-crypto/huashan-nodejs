@@ -1,0 +1,25 @@
+/* [project]/src/app/components/myfont_1b16344f.module.css [app-client] (css) */
+@font-face {
+  font-family: myFont;
+  src: url("../media/Benmo Qianghei-s.p.323867f9.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: myFont Fallback;
+  src: local(Arial);
+  ascent-override: 74.28%;
+  descent-override: 10.13%;
+  line-gap-override: 0.0%;
+  size-adjust: 118.47%;
+}
+
+.myfont_1b16344f-module__N5Wp5a__className {
+  font-family: myFont, myFont Fallback;
+}
+
+.myfont_1b16344f-module__N5Wp5a__variable {
+  --font-benmo: "myFont", "myFont Fallback";
+}
+
+/*# sourceMappingURL=src_app_components_myfont_1b16344f_module_css_e59ae46c._.single.css.map*/

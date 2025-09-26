@@ -9,7 +9,7 @@ description:
   肯普研发团队将离合机构与扭力侦测传感器相结合，在离合机构无刷电动螺丝起子中增加专利设计的传感器机构与控制软件。
   让一般的离合机构工具直接升级为智能工具，带有计数防错以及数据纪录等功能。"
 images:
-  - "/images/product_imgs/34c97f50-16f7-42d3-a5b3-c146b0ab1410.png"
+  - "/images/product_imgs/33a97190-6021-4af6-80c7-66935c743f8c.jpeg"
 features:
 ---
 
