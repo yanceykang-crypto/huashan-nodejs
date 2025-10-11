@@ -32,6 +32,7 @@ export type ProductItem = {
   images: string[];
   features: string[];
   content?: string;
+  detailsImages?: string[];
 };
 
 /**
@@ -74,8 +75,16 @@ export async function getAllMarkdownDocs<T extends NewsItem | ProductItem>(
 
         // 根据目录类型提取相应的数据
         if (dir === "news") {
-          const { title, date, summary, imageUrl, author, category, tags } =
-            matterResult.data;
+          const {
+            title,
+            date,
+            summary,
+            imageUrl,
+            author,
+            category,
+            tags,
+            detailsImages,
+          } = matterResult.data;
 
           // 确保必要字段存在
           if (!title || !date) {
@@ -93,7 +102,8 @@ export async function getAllMarkdownDocs<T extends NewsItem | ProductItem>(
             author: author || undefined,
             category: category || undefined,
             tags: tags || undefined,
-          } as T;
+            detailsImages: detailsImages || [],
+          } as unknown as T;
         } else if (dir === "products") {
           const {
             title,
@@ -105,6 +115,7 @@ export async function getAllMarkdownDocs<T extends NewsItem | ProductItem>(
             images,
             features,
             content,
+            detailsImages,
           } = matterResult.data;
 
           // 确保必要字段存在
@@ -124,6 +135,7 @@ export async function getAllMarkdownDocs<T extends NewsItem | ProductItem>(
             images: images || [],
             features: features || [],
             content: content || contentHtml,
+            detailsImages: detailsImages || [],
           } as T;
         }
 

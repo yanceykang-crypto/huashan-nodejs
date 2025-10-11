@@ -1,3 +1,4 @@
+"use client";
 import { AgentBrandConfig } from "@/app/config/home";
 import { FC } from "react";
 import { Image } from "@heroui/react";

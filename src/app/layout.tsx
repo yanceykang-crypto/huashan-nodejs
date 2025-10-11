@@ -36,10 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      // className={`${notoSansSC.variable} ${geistSans.variable} ${lexend.variable} antialiased`}
-    >
+    <html lang="en">
       <head>
         <meta charSet="utf-8" />
         <meta property="og:title" content="化善智能装备制造" />

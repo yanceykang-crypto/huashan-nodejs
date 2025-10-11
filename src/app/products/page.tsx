@@ -9,9 +9,9 @@ const ProductsPage = async () => {
   return (
     <div>
       {/* Banner区域 */}
-      <div className="bg-gradient-to-r relative overflow-hidden from-blue-600 to-purple-600 group">
+      <div className="bg-gradient-to-r relative overflow-hidden from-primary-600 to-primary-600 group">
         <div className="absolute inset-0 bg-cover bg-center opacity-30 group-hover:scale-105 transition-transform duration-1000"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-purple-900/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-600/70"></div>
         <div className="py-20 inset-0 flex flex-col items-center justify-center text-center px-4">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
             产品中心

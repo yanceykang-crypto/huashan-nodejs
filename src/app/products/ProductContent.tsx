@@ -107,16 +107,16 @@ export function ProductContent({
             key={product.id}
             className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl"
           >
-            <div className="relative h-48 overflow-hidden">
+            <div className="relative h-65 overflow-hidden">
               <Image
                 src={product.images[0]}
                 alt={product.title}
                 classNames={{
-                  img: "!max-w-full",
+                  img: "!max-w-full h-65 object-contain",
                   wrapper:
-                    "object-cover h-48 w-full transition-transform duration-500 hover:scale-110 !max-w-full",
+                    "object-contain  w-full transition-transform duration-500 !max-w-full",
                 }}
-                className="object-cover h-48 w-full transition-transform duration-500 hover:scale-110"
+                className="object-contain h-full w-full transition-transform duration-500"
               />
             </div>
             <div className="p-6">

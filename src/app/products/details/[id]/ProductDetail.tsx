@@ -1,10 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { ProductItem } from "@/app/services/markdownService";
 import { productCateList } from "@/app/config/products";
-import { Chip } from "@heroui/react";
+import { Chip, Image } from "@heroui/react";
 
 interface ProductDetailProps {
   product: ProductItem;
@@ -43,8 +42,12 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
               <Image
                 src={currImage || product.images[0]}
                 alt={product.title}
-                fill
                 className="object-contain"
+                classNames={{
+                  img: "!max-w-full h-full object-contain m-auto",
+                  wrapper:
+                    "object-contain h-full m-auto w-full transition-transform duration-500 !max-w-full",
+                }}
               />
             </div>
             <div className="grid grid-cols-3 gap-2">
@@ -56,9 +59,14 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
                 >
                   <Image
                     src={image}
+                    width={100}
                     alt={`${product.title} - ${index + 1}`}
-                    fill
-                    className="object-contain"
+                    className="object-contain h-full"
+                    classNames={{
+                      img: "!max-w-full h-full object-contain m-auto",
+                      wrapper:
+                        "object-contain h-full m-auto w-full transition-transform duration-500 !max-w-full",
+                    }}
                   />
                 </div>
               ))}
@@ -121,6 +129,17 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
             className="prose max-w-none markdown-body"
             dangerouslySetInnerHTML={{ __html: product.content || "" }}
           />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+            {product.detailsImages?.map((image: string, index: number) => (
+              <div key={index} className="relative  rounded-md">
+                <Image
+                  src={image}
+                  alt={`${product.title} - 详情图 ${index + 1}`}
+                  className="object-contain"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
