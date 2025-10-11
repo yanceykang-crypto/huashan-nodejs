@@ -49,7 +49,6 @@ const ProductDetailPage = async ({
   if (!product) {
     notFound();
   }
-  console.log(product);
   return <ProductDetail product={product} />;
 };
 
