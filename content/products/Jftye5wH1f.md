@@ -2,6 +2,7 @@
 title: 将一般离合式定扭机构的电动螺丝起子 智能化
 category: pneumatic
 cate: pneumatic_wrench
+order: 3
 description:
   "近几年来应工业4.0智能生产的需求，对螺栓拧紧质量的可靠度要求越来越高。
   最直接的提升拧紧质量可靠度的方式就是:将拧紧扭力数据化，并显示每次拧紧的结果判定。

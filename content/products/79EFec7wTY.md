@@ -3,7 +3,7 @@ title: 控制器
 category: electric
 cate: cleco
 features:
-
+order: 5
 images:
   - "/images/product_imgs/51d2e57f-7294-4e6e-aacc-e4035ef4d1e9.png"
 description: 通过编程逻辑或专用指令，控制机械臂、传送带、加工设备等的启停、速度、方向等操作，实现自动化生产流程。

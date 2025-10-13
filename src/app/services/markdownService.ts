@@ -18,6 +18,7 @@ export type NewsItem = {
   author?: string;
   category?: string;
   tags?: string[];
+  order: number;
 };
 
 // 定义产品项的接口
@@ -33,6 +34,7 @@ export type ProductItem = {
   features: string[];
   content?: string;
   detailsImages?: string[];
+  order: number;
 };
 
 /**
@@ -84,6 +86,7 @@ export async function getAllMarkdownDocs<T extends NewsItem | ProductItem>(
             category,
             tags,
             detailsImages,
+            order,
           } = matterResult.data;
 
           // 确保必要字段存在
@@ -102,6 +105,7 @@ export async function getAllMarkdownDocs<T extends NewsItem | ProductItem>(
             author: author || undefined,
             category: category || undefined,
             tags: tags || undefined,
+            order: order || 0,
             detailsImages: detailsImages || [],
           } as unknown as T;
         } else if (dir === "products") {
@@ -115,6 +119,7 @@ export async function getAllMarkdownDocs<T extends NewsItem | ProductItem>(
             images,
             features,
             content,
+            order,
             detailsImages,
           } = matterResult.data;
 
@@ -134,6 +139,7 @@ export async function getAllMarkdownDocs<T extends NewsItem | ProductItem>(
             details: details || "",
             images: images || [],
             features: features || [],
+            order: order || 0,
             content: content || contentHtml,
             detailsImages: detailsImages || [],
           } as T;
@@ -153,9 +159,9 @@ export async function getAllMarkdownDocs<T extends NewsItem | ProductItem>(
           new Date((b as NewsItem).date).getTime() -
           new Date((a as NewsItem).date).getTime()
       );
+    } else {
+      return validItems.sort((a, b) => a.order - b.order);
     }
-
-    return validItems;
   } catch (error) {
     console.error(`Error reading ${dir} items:`, error);
     return [];

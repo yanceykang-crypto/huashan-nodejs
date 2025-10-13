@@ -1,0 +1,14 @@
+{
+  "/api/contact/route": "app/api/contact/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/about/page": "app/about/page.js",
+  "/news/[id]/page": "app/news/[id]/page.js",
+  "/partner/page": "app/partner/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/news/page": "app/news/page.js",
+  "/page": "app/page.js",
+  "/honors/page": "app/honors/page.js",
+  "/products/page": "app/products/page.js",
+  "/products/details/[id]/page": "app/products/details/[id]/page.js"
+}

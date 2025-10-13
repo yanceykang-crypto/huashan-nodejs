@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST='{"pages":{},"app":{"/Users/yangjianxin/Documents/huashan-nodejs/src/app/layout":["static/media/d2f73345e4cac34a-s.p.ttf"]},"appUsingSizeAdjust":true,"pagesUsingSizeAdjust":false}';

@@ -83,7 +83,10 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
             <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
               {product.title}
             </h1>
-            <p className="text-gray-600 mb-6">{product.description}</p>
+            <div
+              className="text-gray-600 mb-6 [&>p]:mb-2"
+              dangerouslySetInnerHTML={{ __html: product.description || "" }}
+            ></div>
             {product.features.length > 0 && (
               <div className="mb-8">
                 <h2 className="text-lg font-bold text-gray-800 mb-3">
@@ -126,7 +129,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
 
         <div className="border-t border-gray-200 p-6 md:p-8">
           <div
-            className="prose max-w-none markdown-body"
+            className="prose max-w-none markdown-body [&>p>img]:max-w-full md:[&>p>img]:max-w-4xl"
             dangerouslySetInnerHTML={{ __html: product.content || "" }}
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">

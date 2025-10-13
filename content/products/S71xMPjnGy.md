@@ -2,6 +2,7 @@
 title: EPF系列 传感伺服拧紧工具
 category: pneumatic
 cate: pneumatic_wrench
+order: 2
 features:
   - "EPF Series 扭力范围0.05~12Nm, 涵盖螺丝起子常用微扭与一般扭力范围."
   - "满足多方向性应用需求,提供手持式(直型, 枪型, 弯头) / 固定式直型"

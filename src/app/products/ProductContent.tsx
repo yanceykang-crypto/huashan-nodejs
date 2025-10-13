@@ -127,12 +127,14 @@ export function ProductContent({
               <h2 className="text-xl font-bold text-gray-800 my-2 h-14 line-clamp-2">
                 {product.title}
               </h2>
-              <p className="text-gray-600 mb-4 line-clamp-2 h-12">
-                {product.description}
-              </p>
+              <p
+                className="text-gray-600 mb-4 line-clamp-2 h-12"
+                dangerouslySetInnerHTML={{ __html: product.description }}
+              ></p>
               <div className="flex justify-between items-center">
                 <Link
                   href={`/products/details/${product.id}`}
+                  target="_blank"
                   className="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-600 transition-colors"
                 >
                   查看详情
