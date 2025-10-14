@@ -2,7 +2,7 @@
 title: 力可达
 category: manual
 cate: likeda
-description: "层电镀防锈（如镀镍、镀铬），通过 96 小时盐雾测试，防腐蚀能力远超行业标准。防滑纹理设计（如螺丝刀柄部的菱形滚花或棘轮扳手的激光雕刻纹路），湿手操作时仍能保持稳固握持。"
+description: ""
 
 images:
   - "/images/product_imgs/e4d64aa6-93b8-4c3e-89fd-6a68efdf6e77.jpeg"
@@ -29,7 +29,7 @@ features:
 
 2.深入关键零组件的研发，以掌握核心技术及成本的控制能力
 
-3.缩短产品销售路径、深耕现有国内外销售通路"
+3.缩短产品销售路径、深耕现有国内外销售通路
 
 ![](/images/product_imgs/e4d64aa6-93b8-4c3e-89fd-6a68efdf6e77.jpeg)
 ![](/images/product_imgs/a36c59db-7d98-45b1-aead-c1801be226b4.jpeg)

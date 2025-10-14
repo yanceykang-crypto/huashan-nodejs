@@ -3,7 +3,7 @@ title: EPT系列 传感伺服拧紧工具
 category: pneumatic
 cate: pneumatic_wrench
 order: 1
-description: EPT Series是肯普A级拧紧工具系列, 这系列工具自1989年来一直领先在行业应用领域, 有先进的控制器系统与系列0.1~70.0Nm扭力范围的手持式螺丝起子与固定式拧紧轴
+description: EPT系列传感伺服拧紧工具以高精度、智能化和高效稳定为核心特点，采用先进的伺服控制技术，能够实时监测并动态调整拧紧过程中的扭矩、角度和转速，确保拧紧质量的一致性。其内置高灵敏度传感器和算法，可自动补偿材料变形或摩擦系数变化，适用于汽车制造、电子装配等对精度要求严苛的工业场景。此外，工具支持数据追溯和联网功能，便于生产流程的数字化管理，同时具备低噪音、长寿命等人性化设计。
 images:
   - "/images/product_imgs/61e00609-a0ff-455c-bb05-2b208bc3207e.jpeg"
 features:
@@ -22,4 +22,4 @@ features:
 
 # EPT 传感伺服螺丝起子 / 拧紧工具 手持式弯头
 
-![](/images/product_imgs/988d8240-712b-4078-9158-bc44c70c209c.png)
+![](/images/product_imgs/fdf7a742-5162-403b-9062-b12b749f96c1.png)

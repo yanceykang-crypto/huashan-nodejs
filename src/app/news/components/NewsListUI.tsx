@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React from "react";
 import { Image } from "@heroui/react";
@@ -23,14 +23,14 @@ const NewsListUI: React.FC<NewsListUIProps> = ({ newsList }) => {
 
   return (
     <>
-      <div className="md:flex gap-10 shadow-md rounded-lg bg-white overflow-hidden">
-        <div className="md:max-w-[50%] w-[50%]">
+      <div className="md:flex gap-10 shadow-md rounded-lg bg-white overflow-hidden p-4">
+        <div className="md:max-w-[50%] w-[100%]">
           <Link href={`/news/${newsList[0].id}`}>
             <Image
               src={newsList[0].imageUrl}
               alt={newsList[0].title}
               classNames={{
-                img: "h-70 w-full object-contain",
+                img: " w-full object-contain",
                 wrapper: "h-full w-full !max-w-full",
               }}
             />

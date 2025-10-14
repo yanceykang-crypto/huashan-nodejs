@@ -3,7 +3,7 @@ import { productCateList } from "../config/products";
 import Link from "next/link";
 import { Image } from "@heroui/react";
 import { useSearchParams, useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useLayoutEffect, useMemo, useState } from "react";
 import { ProductItem } from "../services/markdownService";
 
 export function ProductContent({
@@ -17,23 +17,26 @@ export function ProductContent({
 
   // 从路由参数中获取当前选中的分类
   const category = searchParams.get("category") || "all";
-
+  const childCategoryParam = searchParams.get("brand") || "child_all";
+  useLayoutEffect(() => {
+    setChildCategory(childCategoryParam);
+  }, [childCategoryParam]);
   // 根据分类筛选产品
   const filteredProducts = useMemo(() => {
     if (category === "all") {
       return productList;
     } else {
       return productList.filter((product) => {
-        if (childCategory !== "child_all") {
+        if (childCategoryParam !== "child_all") {
           return (
-            product.category === category && product.cate === childCategory
+            product.category === category && product.cate === childCategoryParam
           );
         } else {
           return product.category === category;
         }
       });
     }
-  }, [category, childCategory, productList]);
+  }, [category, childCategoryParam, productList]);
   // 处理分类切换
   const handleCategoryChange = (newCategory: string) => {
     // 根据分类切换路由参数
@@ -44,6 +47,16 @@ export function ProductContent({
       router.push(`/products?category=${encodeURIComponent(newCategory)}`);
     }
   };
+
+  const handleChildCategoryChange = (newChildCategory: string) => {
+    setChildCategory(newChildCategory);
+    router.push(
+      `/products?category=${encodeURIComponent(
+        category
+      )}&brand=${encodeURIComponent(newChildCategory)}`
+    );
+  };
+
   const childCateList = useMemo(() => {
     return (
       productCateList.find((item) => item.value === category)?.children || []
@@ -86,7 +99,7 @@ export function ProductContent({
             return (
               <button
                 key={cat.value}
-                onClick={() => setChildCategory(cat.value)}
+                onClick={() => handleChildCategoryChange(cat.value)}
                 className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${
                   childCategory === cat.value
                     ? "bg-primary text-white shadow-md"
@@ -134,7 +147,7 @@ export function ProductContent({
               <div className="flex justify-between items-center">
                 <Link
                   href={`/products/details/${product.id}`}
-                  target="_blank"
+                  // target="_blank"
                   className="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-600 transition-colors"
                 >
                   查看详情

@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import Link from "next/link";
 import { ProductItem } from "@/app/services/markdownService";
 import { productCateList } from "@/app/config/products";
-import { Chip, Image } from "@heroui/react";
+import { Button, Chip, Image } from "@heroui/react";
+import { useRouter } from "next/navigation";
 
 interface ProductDetailProps {
   product: ProductItem;
@@ -11,12 +11,13 @@ interface ProductDetailProps {
 
 const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
   const [currImage, setCurrImage] = useState("");
-
+  const router = useRouter();
   return (
     <div className="container mx-auto px-4 py-8">
-      <Link
-        href="/products"
+      <Button
         className="inline-flex items-center text-primary hover:text-primary-600 mb-6"
+        variant="light"
+        onPress={() => router.back()}
       >
         <svg
           className="w-4 h-4 mr-1"
@@ -33,7 +34,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
           />
         </svg>
         返回产品列表
-      </Link>
+      </Button>
 
       <div className="bg-white rounded-lg shadow-lg overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-6 md:p-8">

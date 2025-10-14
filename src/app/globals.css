@@ -1434,6 +1434,7 @@ button.swiper-pagination-bullet {
 .markdown-body p {
   margin-bottom: 10px;
   margin-top: 0;
+  font-size: 18px;
 }
 
 .markdown-body blockquote {
