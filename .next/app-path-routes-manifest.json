@@ -2,7 +2,6 @@
   "/api/contact/route": "/api/contact",
   "/_not-found/page": "/_not-found",
   "/favicon.ico/route": "/favicon.ico",
-  "/contact/page": "/contact",
   "/about/page": "/about",
   "/news/[id]/page": "/news/[id]",
   "/news/page": "/news",
@@ -10,5 +9,6 @@
   "/partner/page": "/partner",
   "/page": "/",
   "/products/page": "/products",
+  "/contact/page": "/contact",
   "/products/details/[id]/page": "/products/details/[id]"
 }
