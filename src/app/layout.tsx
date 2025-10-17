@@ -46,6 +46,10 @@ export default function RootLayout({
         />
         <meta property="og:image" content="/logo.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script
+          async
+          src="https://0199f286-f383-715f-875b-fd27b000813d.spst2.com/ustat.js"
+        ></script>
       </head>
       <body>
         {/* <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm"> */}
