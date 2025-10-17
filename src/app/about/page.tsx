@@ -123,7 +123,7 @@ export default function AboutPage() {
             <h3 className="text-base font-semibold m-10 text-center text-gray-100">
               广纳各方意见不断进步，以无比的责任感和优质产品及服务得到客户信赖，
               <br />
-              不是让客户买的多 而是让客户买的对。
+              不是让客户买的多，而是让客户买的对。
             </h3>
           </div>
 

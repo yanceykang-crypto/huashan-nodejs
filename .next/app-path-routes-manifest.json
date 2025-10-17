@@ -1,14 +1,14 @@
 {
-  "/api/contact/route": "/api/contact",
   "/_not-found/page": "/_not-found",
+  "/api/contact/route": "/api/contact",
   "/favicon.ico/route": "/favicon.ico",
   "/about/page": "/about",
-  "/news/[id]/page": "/news/[id]",
   "/news/page": "/news",
   "/honors/page": "/honors",
-  "/partner/page": "/partner",
-  "/page": "/",
-  "/products/page": "/products",
   "/contact/page": "/contact",
+  "/page": "/",
+  "/partner/page": "/partner",
+  "/products/page": "/products",
+  "/news/[id]/page": "/news/[id]",
   "/products/details/[id]/page": "/products/details/[id]"
 }

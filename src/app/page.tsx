@@ -148,8 +148,8 @@ export default function Home() {
           <div className="max-w-7xl mx-auto">
             <div className="flex justify-between items-center">
               <div>
-                <h1 className="text-3xl font-bold">News Center</h1>
-                <p className="text-xl font-bold">新闻中心</p>
+                <h1 className="text-5xl font-bold">新闻中心</h1>
+                <p className="text-3xl font-bold">News Center</p>
               </div>
               <div>
                 <Button color="primary" className="text-white">

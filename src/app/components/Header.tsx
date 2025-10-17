@@ -51,7 +51,7 @@ export default function Header() {
           >
             <Image
               src="/images/site_sulg.png"
-              className="h-6"
+              className="h-4"
               alt="logo"
               classNames={{ wrapper: "rounded-none", img: "rounded-none" }}
             />

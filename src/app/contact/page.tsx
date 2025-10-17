@@ -147,6 +147,7 @@ const ContactPage = () => {
             </p>
             <p className="text-white">邮箱：{email}</p>
             <p className="text-white">地址：{address}</p>
+            <p className="text-white">邮编：523000</p>
           </div>
         </div>
         <div className="h-120 w-full md:w-140">

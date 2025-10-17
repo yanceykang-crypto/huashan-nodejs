@@ -22,6 +22,7 @@ const Banner = () => {
       className=" w-full swiper-super-flow"
       spaceBetween={30}
       centeredSlides={true}
+      height={400}
       autoplay={{
         delay: 5000,
         disableOnInteraction: false,
@@ -33,11 +34,14 @@ const Banner = () => {
       onAutoplayTimeLeft={onAutoplayTimeLeft}
     >
       {bannerConfig.map((item, index) => (
-        <SwiperSlide key={index}>
+        <SwiperSlide key={index} className="h-full">
           <Image
             src={item.src}
-            className="rounded-none !w-dvw"
+            className="rounded-none !w-dvw h-full object-cover cursor-pointer"
             alt={item.alt}
+            onClick={() => {
+              window.location.href = "/contact";
+            }}
           />
         </SwiperSlide>
       ))}
