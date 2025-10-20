@@ -47,11 +47,11 @@ export default function Header() {
             <Image src="/images/site_logo.png" className="h-16" alt="logo" />
           </Link>
           <span
-            className={`text-2xl ml-4 text-primary font-light hidden sm:block ${myFont.className}`}
+            className={`text-2xl ml-4 text-primary font-light mt-4 hidden sm:block ${myFont.className}`}
           >
             <Image
               src="/images/site_sulg.png"
-              className="h-4"
+              className="h-5.5"
               alt="logo"
               classNames={{ wrapper: "rounded-none", img: "rounded-none" }}
             />

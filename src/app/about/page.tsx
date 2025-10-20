@@ -47,7 +47,7 @@ export default function AboutPage() {
       <div className="relative h-72 md:h-96 overflow-hidden group">
         <Image
           src="/images/about_bg.png"
-          alt="化善科技"
+          alt="化善智能装备制造"
           className="object-cover rounded-none h-100 !max-w-full"
           classNames={{ wrapper: "absolute inset-0 w-full h-full z-0" }}
         />

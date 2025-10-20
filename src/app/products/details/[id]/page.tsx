@@ -26,13 +26,13 @@ export async function generateMetadata({
 
   if (!product) {
     return {
-      title: "产品不存在 - 化善科技",
+      title: "产品不存在 - 化善智能装备制造",
       description: "抱歉，您访问的产品不存在。",
     };
   }
 
   return {
-    title: `${product.title} - 化善科技`,
+    title: `${product.title} - 化善智能装备制造`,
     description: product.description,
   };
 }

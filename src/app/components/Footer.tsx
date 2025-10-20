@@ -24,7 +24,10 @@ const Footer = () => {
               </h3>
               <ul className="md:flex md:flex-col flex-row gap-4">
                 <li>
-                  <Link href="/" className="hover:text-white transition-colors">
+                  <Link
+                    href="/partner"
+                    className="hover:text-white transition-colors"
+                  >
                     合作伙伴
                   </Link>
                 </li>
@@ -150,7 +153,9 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-gray-400 mt-3 pt-5 flex flex-col md:flex-row justify-between items-center">
-          <p>© 2023 「{siteName}」. 保留所有权利.</p>
+          <p>
+            © {new Date().getFullYear()} 「{siteName}」. 保留所有权利.
+          </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href={"https://beian.miit.gov.cn/"} target="_blank">
               备案号：{ipcNo}

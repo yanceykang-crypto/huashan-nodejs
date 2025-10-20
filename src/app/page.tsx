@@ -4,12 +4,23 @@ import { Button, cn, Divider, Image, Link } from "@heroui/react";
 // import Banner from "../components/Banner";
 
 import { AgentBrandConfig, SalesScope } from "@/app/config/home";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Banner from "./components/Banner";
-import { NewsList } from "./config/news";
+import { getAllMarkdownDocs, NewsItem } from "./services/markdownService";
 
 export default function Home() {
   const [active, setActive] = useState(0);
+  const [newsList, setNewsList] = useState<NewsItem[]>([]);
+  const getNews = async () => {
+    const news = await getAllMarkdownDocs("news");
+    if (news.length > 0) {
+      setNewsList(news as NewsItem[]);
+    }
+  };
+  useEffect(() => {
+    getNews();
+  }, []);
+
   return (
     <div className="font-noto-sans-sc">
       <main className="w-full">
@@ -32,7 +43,7 @@ export default function Home() {
                       onMouseEnter={() => setActive(key)}
                     >
                       {item.icon}
-                      <p className="m-2 text-xs md:text-base font-bold">
+                      <p className="m-2 text-xs md:text-base font-bold text-nowrap">
                         {item.label}
                       </p>
                     </div>
@@ -148,8 +159,8 @@ export default function Home() {
           <div className="max-w-7xl mx-auto">
             <div className="flex justify-between items-center">
               <div>
-                <h1 className="text-5xl font-bold">新闻中心</h1>
-                <p className="text-3xl font-bold">News Center</p>
+                <h1 className="md:text-5xl font-bold">新闻中心</h1>
+                <p className="md:text-3xl font-bold">News Center</p>
               </div>
               <div>
                 <Button color="primary" className="text-white">
@@ -158,29 +169,31 @@ export default function Home() {
               </div>
             </div>
             <div className="md:flex mt-10 gap-10">
-              <div className="w-full md:w-2xl relative overflow-hidden rounded-xl">
-                <a href={`/news/${NewsList[0].id}`}>
-                  <Image
-                    alt=""
-                    className="md:h-101 md:w-full object-contain "
-                    src={NewsList[0].imageUrl}
-                  ></Image>
-                  <div className="w-full p-4 absolute bottom-0 left-0 z-10 bg-[#e6241b66] text-white">
-                    <h2 className="text-xl md:text-[26px] md:pr-30 relative overflow-hidden text-ellipsis line-clamp-1">
-                      {NewsList[0].title}
-                      <span className="md:absolute text-base right-0 top-0 font-[lexend]">
-                        {NewsList[0].date}
-                      </span>
-                    </h2>
-                    <p className="mt-5 overflow-hidden text-ellipsis line-clamp-1 md:line-clamp-3">
-                      {NewsList[0].summary}
-                    </p>
-                  </div>
-                </a>
-              </div>
+              {newsList.length > 0 && newsList[0] !== undefined && (
+                <div className="w-full md:w-2xl relative overflow-hidden rounded-xl">
+                  <a href={`/news/${newsList[0].id}`}>
+                    <Image
+                      alt=""
+                      className="md:h-101 md:w-full object-contain rounded-xl "
+                      src={newsList[0].imageUrl}
+                    ></Image>
+                    <div className="w-full p-4 absolute bottom-0 left-0 z-10 bg-[#e6241b66] text-white">
+                      <h2 className="text-xl md:text-[26px] md:pr-30 relative overflow-hidden text-ellipsis line-clamp-1">
+                        {newsList[0].title}
+                        <span className="md:absolute text-base right-0 top-0 font-[lexend]">
+                          {newsList[0].date}
+                        </span>
+                      </h2>
+                      <p className="mt-5 overflow-hidden text-ellipsis line-clamp-1 md:line-clamp-3">
+                        {newsList[0].summary}
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              )}
               <div className="md:w-3xl mt-10 md:mt-0">
                 <ul>
-                  {NewsList.slice(1, 4).map((item, index) => {
+                  {newsList.slice(1, 4).map((item, index) => {
                     return (
                       <li
                         className="group group-hover:border-1 cursor-pointer"

@@ -25,12 +25,12 @@ export async function generateMetadata({
 
   if (!news) {
     return {
-      title: "新闻不存在 - 化善科技",
+      title: "新闻不存在 - 化善智能装备制造",
     };
   }
 
   return {
-    title: `${news.title} - 化善科技`,
+    title: `${news.title} - 化善智能装备制造`,
     description: news.summary,
   };
 }
