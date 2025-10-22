@@ -24,7 +24,7 @@ interface ContactFormData {
   message: string;
   captcha: string;
 }
-
+export const runtime = 'edge';
 // 验证请求数据
 function validateContactForm(data: unknown) {
   const errors: { [key: string]: string } = {};
